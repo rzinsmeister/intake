@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sheltername:</b>
+  <%= @shelter.sheltername %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @shelter.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @shelter.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @shelter.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @shelter.zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @shelter.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_shelter_path(@shelter) %> |
+<%= link_to 'Back', shelters_path %>

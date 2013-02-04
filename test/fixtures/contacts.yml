@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pnamef: MyString
+  pnamel: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  phone: MyString
+  entrydate: 2013-01-31
+  exitdate: 2013-01-31
+
+two:
+  pnamef: MyString
+  pnamel: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  phone: MyString
+  entrydate: 2013-01-31
+  exitdate: 2013-01-31

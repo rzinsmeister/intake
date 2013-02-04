@@ -1,0 +1,51 @@
+<h1>Listing entrants</h1>
+
+<table>
+  <tr>
+    <th>Cnamef</th>
+    <th>Cnamel</th>
+    <th>Contactid</th>
+    <th>Dob</th>
+    <th>Grade</th>
+    <th>Shelterid</th>
+    <th>Mnres</th>
+    <th>Entrydate</th>
+    <th>Exitdate</th>
+    <th>Totaldays</th>
+    <th>Lastschool</th>
+    <th>Shelterschool</th>
+    <th>Mpsschool</th>
+    <th>Nonmpsschool</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entrants.each do |entrant| %>
+  <tr>
+    <td><%= entrant.cnamef %></td>
+    <td><%= entrant.cnamel %></td>
+    <td><%= entrant.contactid %></td>
+    <td><%= entrant.dob %></td>
+    <td><%= entrant.grade %></td>
+    <td><%= entrant.shelterid %></td>
+    <td><%= entrant.mnres %></td>
+    <td><%= entrant.entrydate %></td>
+    <td><%= entrant.exitdate %></td>
+    <td><%= entrant.totaldays %></td>
+    <td><%= entrant.lastschool %></td>
+    <td><%= entrant.shelterschool %></td>
+    <td><%= entrant.mpsschool %></td>
+    <td><%= entrant.nonmpsschool %></td>
+    <td><%= entrant.note %></td>
+    <td><%= link_to 'Show', entrant %></td>
+    <td><%= link_to 'Edit', edit_entrant_path(entrant) %></td>
+    <td><%= link_to 'Destroy', entrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entrant', new_entrant_path %>

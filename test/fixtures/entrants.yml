@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cnamef: MyString
+  cnamel: MyString
+  contactid: 1
+  dob: 2013-01-31
+  grade: MyString
+  shelterid: 1
+  mnres: MyString
+  entrydate: 2013-01-31
+  exitdate: 2013-01-31
+  totaldays: 1
+  lastschool: 1
+  shelterschool: 1
+  mpsschool: 1
+  nonmpsschool: 1
+  note: MyText
+
+two:
+  cnamef: MyString
+  cnamel: MyString
+  contactid: 1
+  dob: 2013-01-31
+  grade: MyString
+  shelterid: 1
+  mnres: MyString
+  entrydate: 2013-01-31
+  exitdate: 2013-01-31
+  totaldays: 1
+  lastschool: 1
+  shelterschool: 1
+  mpsschool: 1
+  nonmpsschool: 1
+  note: MyText

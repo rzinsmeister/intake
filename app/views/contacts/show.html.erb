@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pnamef:</b>
+  <%= @contact.pnamef %>
+</p>
+
+<p>
+  <b>Pnamel:</b>
+  <%= @contact.pnamel %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @contact.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @contact.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @contact.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @contact.zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @contact.phone %>
+</p>
+
+<p>
+  <b>Entrydate:</b>
+  <%= @contact.entrydate %>
+</p>
+
+<p>
+  <b>Exitdate:</b>
+  <%= @contact.exitdate %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
