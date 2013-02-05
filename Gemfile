@@ -16,9 +16,9 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 
 gem 'seed-fu', '~> 2.2.0'
-gem 'twitter-bootstrap-rails', '~> 2.1.3'
+gem 'twitter-bootstrap-rails', '~> 2.2.0'
 gem 'therubyracer', '~> 0.10.2'
-
+gem 'less-rails'
 
 
 # Gems used only for assets and not required

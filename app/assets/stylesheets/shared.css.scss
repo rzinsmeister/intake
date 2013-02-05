@@ -1,0 +1,21 @@
+@import "reset";
+@import "fonts";
+@import "colors";
+@import "mixins";
+
+/* Hide Stuff */
+ul.accessibility { display: none; }
+
+body {
+background-color: $background;
+}
+
+table {
+background-color: white;
+border: solid $border 2px;
+}
+
+table th {
+background-color: rgb(103,127,148);
+color:white;
+}
