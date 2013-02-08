@@ -47,6 +47,15 @@
     <%= f.label :exitdate %><br />
     <%= f.date_select :exitdate %>
   </div>
+  
+   <%= f.fields_for :entrants do |e| %>
+    <div>
+    HELLO I AM WORKING
+    <%= e.label :cnamef %><br />
+    <%= e.text_field :cnamef %>
+  	</div>
+  	<% end %>
+  	
   <div class="actions">
     <%= f.submit %>
   </div>

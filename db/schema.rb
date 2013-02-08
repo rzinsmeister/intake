@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131213106) do
+ActiveRecord::Schema.define(:version => 20130207050032) do
 
   create_table "contacts", :force => true do |t|
     t.string   "pnamef"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20130131213106) do
   create_table "entrants", :force => true do |t|
     t.string   "cnamef"
     t.string   "cnamel"
-    t.integer  "contactid"
+    t.integer  "contact_id"
     t.date     "dob"
     t.string   "grade"
     t.integer  "shelterid"
