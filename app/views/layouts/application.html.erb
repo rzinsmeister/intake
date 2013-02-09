@@ -17,7 +17,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
- 					<a class="brand" href="<% link_to root_path %>">MPS Intake</a>
+					<%= link_to "MPS Intake", root_path, class: "brand" %>
  					 <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-user"></i> Username
@@ -47,8 +47,12 @@
   	  <div class="well sidebar-nav-fixed">
 	    <div id="sidebar">
 	      <ul class="nav nav-list">
-	        <li class="nav-header">Sidebar</li>
-          <li><a href="#">Link</a></li>
+	        <li class="nav-header">Quick Links</li>
+	        <li class="nav-header">Add A New</li>
+	        <li><%= link_to 'Student', new_entrant_path %></li>
+          <li><%= link_to 'Parent', new_contact_path %></li>
+          <li><%= link_to 'School', new_school_path %></li>
+          <li><%= link_to 'Shelter', new_shelter_path %></li>
 		  	</ul>
       </div> <!--Sidebar-->
       </div> <!--Sidebar well-->
@@ -58,8 +62,17 @@
 			<%= yield %>
     </div><!--Span-->
     
-  </div>
+        </div>
 </div>
 
+
+<footer>
+	<div class="navbar navbar-fixed-bottom">
+    <p>&copy; Company 2012</p>
+  </div>
+</footer>
+
+
+      
 </body>
 </html>
