@@ -1,4 +1,4 @@
-<%= form_for(@contact) do |f| %>
+<%= simple_form_for @contact do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :pnamef %><br />
+    <%= f.label :pnamef, "Guardian's First Name"  %><br />
     <%= f.text_field :pnamef %>
   </div>
   <div class="field">
-    <%= f.label :pnamel %><br />
+    <%= f.label :pnamel , "Guardian's Last Name" %><br />
     <%= f.text_field :pnamel %>
   </div>
   <div class="field">
-    <%= f.label :street %><br />
+    <%= f.label :street, "Address" %><br />
     <%= f.text_field :street %>
   </div>
   <div class="field">
@@ -39,21 +39,78 @@
     <%= f.label :phone %><br />
     <%= f.text_field :phone %>
   </div>
+  
+  
   <div class="field">
-    <%= f.label :entrydate %><br />
+    <%= f.label :entrydate, "Entry Date" %><br />
     <%= f.date_select :entrydate %>
   </div>
   <div class="field">
-    <%= f.label :exitdate %><br />
+    <%= f.label :exitdate, "Exit Date" %><br />
     <%= f.date_select :exitdate %>
   </div>
   
+  
+  
    <%= f.fields_for :entrants do |e| %>
+   
     <div>
-    HELLO I AM WORKING
-    <%= e.label :cnamef %><br />
-    <%= e.text_field :cnamef %>
+    	<%= e.label :cnamef, "Child's First Name" %><br />
+    	<%= e.text_field :cnamef %>
   	</div>
+  	<div class="field">
+    	<%= e.label :cnamel, "Child's Last Name" %><br />
+    	<%= e.text_field :cnamel %>
+    </div>
+  	<div class="field">
+    	<%= e.label :dob, "Date of Birth" %><br />
+    	<%= e.date_select :dob %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :grade, "Grade" %><br />
+    	<%= e.text_field :grade %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :shelterid, "Shelter" %><br />
+    	<%= e.number_field :shelterid %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :mnres, "MN Res" %><br />
+    	<%= e.text_field :mnres %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :entrydate, "Entry Date" %><br />
+    	<%= e.date_select :entrydate %>
+  	</div>
+	  <div class="field">
+  	  <%= e.label :exitdate, "Exit Date" %><br />
+    	<%= e.date_select :exitdate %>
+  	</div>
+  	<div class="field">
+   	  <%= e.label :totaldays, "Total Days" %><br />
+      <%= e.number_field :totaldays %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :lastschool, "Last School" %><br />
+    	<%= e.number_field :lastschool %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :shelterschool, "Shelter School" %><br />
+    	<%= e.number_field :shelterschool %>
+  	</div>
+	  <div class="field">
+  	  <%= e.label :mpsschool, "MPS School" %><br />
+    	<%= e.number_field :mpsschool %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :nonmpsschool, "Non MPS School" %><br />
+    	<%= e.number_field :nonmpsschool %>
+  	</div>
+  	<div class="field">
+    	<%= e.label :note, "Notes" %><br />
+    	<%= e.text_area :note %>
+  	</div>
+  	
   	<% end %>
   	
   <div class="actions">

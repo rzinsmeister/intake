@@ -19,7 +19,7 @@ gem 'seed-fu', '~> 2.2.0'
 gem 'twitter-bootstrap-rails', '~> 2.2.0'
 gem 'therubyracer', '~> 0.10.2'
 gem 'less-rails'
-
+gem "simple_form", "~> 2.0.0.rc"
 
 # Gems used only for assets and not required
 # in production environments by default.
