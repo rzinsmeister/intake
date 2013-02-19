@@ -2,9 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.simple_form label {
-  float: left;
-  width: 100px;
-  text-align: right;
-  margin: 2px 10px;
+div.column1 {
+
 }
+
+div.column2 {
+}
+
+@media screen and (min-width: 300px) {
+margin-left:5%;
+}
+
+@media screen and (min-width: 480px) {
+.three-col {
+       -moz-column-count: 2;
+       -moz-column-gap: 20px;
+       -webkit-column-count: 2;
+       -webkit-column-gap: 20px;
+       column-count: 2;
+       column-count: 20px;
+       }
+       }
+
+
+
+@media screen and (min-width: 960px) {
+.three-col {
+       -moz-column-count: 3;
+       -moz-column-gap: 20px;
+       -webkit-column-count: 3;
+       -webkit-column-gap: 20px;
+       column-count: 3;
+       column-count: 20px;
+       }
+       }
+       
