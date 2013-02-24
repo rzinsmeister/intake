@@ -1,3 +1,6 @@
+<form class="form-horizontal">
+<div class="control-group">
+
 <%= form_for(@shelter) do |f| %>
   <% if @shelter.errors.any? %>
     <div id="error_explanation">
@@ -10,32 +13,57 @@
       </ul>
     </div>
   <% end %>
+  
 
   <div class="field">
-    <%= f.label :sheltername %><br />
+   <label class="control-label"><%= f.label :sheltername, "Shelter" %></label>
+   <div class="controls">
     <%= f.text_field :sheltername %>
+    </div>
   </div>
+
   <div class="field">
-    <%= f.label :street %><br />
+    <label class="control-label"><%= f.label :street, " Address" %></label>
+    <div class="controls">
     <%= f.text_field :street %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :city %><br />
+   <label class="control-label"> <%= f.label :city %></label>
+   <div class="controls">
     <%= f.text_field :city %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :state %><br />
+    <label class="control-label"><%= f.label :state %></label>
+    <div class="controls">
     <%= f.text_field :state %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :zip %><br />
+    <label class="control-label"><%= f.label :zip %></label>
+        <div class="controls">
     <%= f.number_field :zip %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :phone %><br />
+    <label class="control-label"><%= f.label :phone %></label>
+    <div class="controls">
     <%= f.text_field :phone %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
+  
+  <div class="controls">
+  <div class="actions">
+    <%= f.submit :class=> 'btn' %>
+  </div>
+  </div>
+  
 <% end %>
+
+</div>
+</form>

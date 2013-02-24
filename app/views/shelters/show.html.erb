@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<div id="show" class="well lead">
 <p>
-  <b>Sheltername:</b>
+  <b>Shelter:</b>
   <%= @shelter.sheltername %>
 </p>
 
 <p>
-  <b>Street:</b>
+  <b>Address:</b>
   <%= @shelter.street %>
 </p>
 
@@ -30,6 +31,13 @@
   <%= @shelter.phone %>
 </p>
 
+</div>
 
-<%= link_to 'Edit', edit_shelter_path(@shelter) %> |
+<div class="btn-group">
+<div class="btn">
+<%= link_to 'Edit', edit_shelter_path(@shelter) %>
+</div>
+<div class="btn">
 <%= link_to 'Back', shelters_path %>
+</div>
+</div>

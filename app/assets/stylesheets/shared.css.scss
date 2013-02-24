@@ -18,6 +18,14 @@ background-color: $background;
 
 table {
 background-color: white;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+				border-radius: 3px;
+}
+
+/*
+table {
+background-color: white;
 border: solid $border 2px;
 }
 
@@ -25,7 +33,7 @@ table th {
 background-color: rgb(103,127,148);
 color:white;
 }
-
+*/
 @media screen and (min-width: 460px) {
 
 div#page {
