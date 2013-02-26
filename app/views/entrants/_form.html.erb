@@ -54,7 +54,7 @@
   <label class="control-label">
     <%= f.label :grade, "Grade" %></label>
   <div class="controls"> 
-    <%= f.text_field :grade %>
+    <%= f.select :grade, options_for_select(["Pre-K","K","1","2","3","4","5","6","7","8","9","10","11","12"]) %>
   </div>
   </div>
   
@@ -66,11 +66,14 @@
   </div>
   </div>
   
-  <div class="field">
+  <div id="radiobuttons" class="field">
   <label class="control-label">
     <%= f.label :mnres, "MN Res" %></label>
   <div class="controls"> 
-    <%= f.text_field :mnres %>
+  	<%= radio_button_tag(:mnres, "Yes") %>
+		<%= label_tag(:mnres_yes, "Yes") %>
+		<%= radio_button_tag(:mnres, "No") %>
+		<%= label_tag(:mnres_no, "No") %>
   </div>
   </div>
   
