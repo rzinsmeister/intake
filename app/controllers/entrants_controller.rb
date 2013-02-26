@@ -25,7 +25,8 @@ class EntrantsController < ApplicationController
   # GET /entrants/new.json
   def new
     @entrant = Entrant.new
-
+		@shelters = Shelter.all
+		
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @entrant }
@@ -35,12 +36,14 @@ class EntrantsController < ApplicationController
   # GET /entrants/1/edit
   def edit
     @entrant = Entrant.find(params[:id])
+    @shelters = Shelter.all
   end
 
   # POST /entrants
   # POST /entrants.json
   def create
     @entrant = Entrant.new(params[:entrant])
+    @shelters = Shelter.all
 
     respond_to do |format|
       if @entrant.save

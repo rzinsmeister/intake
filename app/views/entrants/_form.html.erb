@@ -62,7 +62,7 @@
   <label class="control-label">
     <%= f.label :shelterid, "Shelter" %></label>
     <div class="controls"> 
-    <%= f.number_field :shelterid  %>
+    <%= f.select :shelterid, options_from_collection_for_select(@shelters, 'id', 'sheltername')  %>
   </div>
   </div>
   
