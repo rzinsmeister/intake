@@ -1,14 +1,20 @@
-
 <!-- <td colspan="3" style="text-align:center;" -->
 
-<h1>Listing entrants</h1>
+<h1>Children</h1>
 
-<table class="table table-nonfluid">
+<div id="indexbtn" class="btn">
+<%= link_to 'New Entrant', new_entrant_path %>
+</div>
+
+
+<div class="span11 entrants-wrapper">
+
+<table class="table table-condensed table-hover">
   <tr>
-    <th style="text-align:center;">Cnamef</th>
-    <th>Cnamel</th>
+    <th>Child's First Name</th>
+    <th>Child's Last Name</th>
     <th>Contactid</th>
-    <th>Dob</th>
+    <th>Date of Birth</th>
     <th>Grade</th>
     <th>Shelterid</th>
     <th>Mnres</th>
@@ -48,7 +54,7 @@
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 
-<%= link_to 'New Entrant', new_entrant_path %>
