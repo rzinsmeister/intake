@@ -1,3 +1,6 @@
+<form class="form-horizontal">
+<div class="control-group">
+
 <%= form_for(@entrant) do |f| %>
   <% if @entrant.errors.any? %>
     <div id="error_explanation">
@@ -11,73 +14,142 @@
     </div>
   <% end %>
 
+<div class="two-col">
   <div class="field">
-    <%= f.label :cnamef, "Student's First Name" %><br />
+     <label class="control-label"><%= f.label :cnamef, "Child's First Name" %></label>
+   <div class="controls"> 
     <%= f.text_field :cnamef %>
   </div>
+  </div>
+  
+  
   <div class="field">
-    <%= f.label :cnamel, "Student's Last Name" %><br />
+    <label class="control-label"><%= f.label :cnamel, "Child's Last Name" %></label>
+     <div class="controls"> 
     <%= f.text_field :cnamel %>
   </div>
+  </div>
+ 
+  
   <div class="field">
-    <%= f.label :contact_id, "Contact" %><br />
+  <label class="control-label">
+    <%= f.label :contact_id, "Contact" %></label>
+  <div class="controls"> 
     <%= f.number_field :contact_id %>
   </div>
-
+	</div>
 
 	
   
   <div class="field">
-    <%= f.label :dob, "Date of Birth" %><br />
+  <label class="control-label">
+    <%= f.label :dob, "Date of Birth" %></label>
+    <div class="controls"> 
     <%= f.date_select :dob %>
   </div>
-  <div class="field">
-    <%= f.label :grade, "Grade" %><br />
+  </div>
+  
+
+  <div class="field"> 
+  <label class="control-label">
+    <%= f.label :grade, "Grade" %></label>
+  <div class="controls"> 
     <%= f.text_field :grade %>
   </div>
-  <div class="field">
-    <%= f.label :shelterid, "Shelter" %><br />
-    <%= f.number_field :shelterid %>
   </div>
+  
   <div class="field">
-    <%= f.label :mnres, "MN Res" %><br />
+  <label class="control-label">
+    <%= f.label :shelterid, "Shelter" %></label>
+    <div class="controls"> 
+    <%= f.number_field :shelterid  %>
+  </div>
+  </div>
+  
+  <div class="field">
+  <label class="control-label">
+    <%= f.label :mnres, "MN Res" %></label>
+  <div class="controls"> 
     <%= f.text_field :mnres %>
   </div>
+  </div>
+  
+  
   <div class="field">
-    <%= f.label :entrydate, "Entry Date" %><br />
+  <label class="control-label">
+    <%= f.label :entrydate, "Entry Date" %></label>
+  <div class="controls"> 
     <%= f.date_select :entrydate %>
   </div>
+  </div>
+  
+
   <div class="field">
-    <%= f.label :exitdate, "Exit Date" %><br />
+  <label class="control-label">
+    <%= f.label :exitdate, "Exit Date" %></label>
+  <div class="controls"> 
     <%= f.date_select :exitdate %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :totaldays, "Total Days" %><br />
+  <label class="control-label">
+    <%= f.label :totaldays, "Total Days" %></label>
+   <div class="controls"> 
     <%= f.number_field :totaldays %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :lastschool, "Last School" %><br />
+    <label class="control-label">
+    <%= f.label :lastschool, "Last School" %></label>
+  <div class="controls"> 
     <%= f.number_field :lastschool %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :shelterschool, "Shelter School" %><br />
+  <label class="control-label">
+    <%= f.label :shelterschool, "Shelter School" %></label>
+	<div class="controls"> 
     <%= f.number_field :shelterschool %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :mpsschool, "MPS School" %><br />
+      <label class="control-label">
+    <%= f.label :mpsschool, "MPS School" %></label>
+  <div class="controls"> 
     <%= f.number_field :mpsschool %>
   </div>
+  </div>
+  
   <div class="field">
-    <%= f.label :nonmpsschool, "Non MPS School" %><br />
+  <label class="control-label">
+    <%= f.label :nonmpsschool, "Non MPS School" %></label>
+  <div class="controls"> 
     <%= f.number_field :nonmpsschool %>
   </div>
+  </div>
+  
+  
   <div class="field">
-    <%= f.label :note, "Notes" %><br />
+        <label class="control-label">
+    <%= f.label :note, "Notes" %></label>
+      <div class="controls"> 
     <%= f.text_area :note %>
+    </div>
   </div>
 
-  
+</div>  
+
+  <div class="controls"> 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=> 'btn'%>
   </div>
+  </div>
+  
 <% end %>
+
+</div>
+</form>
