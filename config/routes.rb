@@ -1,4 +1,13 @@
 Intake::Application.routes.draw do
+  #resources :sessions,  only: [:new, :create, :destroy]
+  get '/login' => "sessions#new", as: "new_session"
+  post '/login' => "sessions#create", as: "session"
+  delete '/logout' => "sessions#destroy", as: "logout"
+  match "logout", :to => "sessions#destroy"
+
+
+
+
   resources :entrants
 
 
