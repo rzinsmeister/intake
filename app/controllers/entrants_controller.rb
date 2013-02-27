@@ -26,6 +26,7 @@ class EntrantsController < ApplicationController
   def new
     @entrant = Entrant.new
 		@shelters = Shelter.all
+		@schools = School.all
 		
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +38,8 @@ class EntrantsController < ApplicationController
   def edit
     @entrant = Entrant.find(params[:id])
     @shelters = Shelter.all
+    @schools = School.all
+
   end
 
   # POST /entrants
@@ -44,6 +47,7 @@ class EntrantsController < ApplicationController
   def create
     @entrant = Entrant.new(params[:entrant])
     @shelters = Shelter.all
+    @schools = School.all
 
     respond_to do |format|
       if @entrant.save

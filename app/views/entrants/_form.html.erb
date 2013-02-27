@@ -45,7 +45,7 @@
   <label class="control-label">
     <%= f.label :dob, "Date of Birth" %></label>
     <div class="controls"> 
-    <%= f.date_select :dob %>
+    <%= f.date_select :dob, :start_year => 1990 %>
   </div>
   </div>
   
@@ -86,10 +86,10 @@
   </div>
   </div>
   
-
+  
   <div class="field">
-  <label class="control-label">
-    <%= f.label :exitdate, "Exit Date" %></label>
+  <label class="control-label"> 
+  	<%= f.label :exitdate, "Exit Date" %></label>
   <div class="controls"> 
     <%= f.date_select :exitdate %>
   </div>
@@ -107,7 +107,7 @@
     <label class="control-label">
     <%= f.label :lastschool, "Last School" %></label>
   <div class="controls"> 
-    <%= f.number_field :lastschool %>
+  <%= f.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
   </div>
   </div>
   
@@ -115,24 +115,22 @@
   <label class="control-label">
     <%= f.label :shelterschool, "Shelter School" %></label>
 	<div class="controls"> 
-    <%= f.number_field :shelterschool %>
-  </div>
+		<%= f.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
   </div>
   
   <div class="field">
       <label class="control-label">
     <%= f.label :mpsschool, "MPS School" %></label>
   <div class="controls"> 
-    <%= f.number_field :mpsschool %>
-  </div>
+		<%= f.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
   </div>
   
   <div class="field">
   <label class="control-label">
     <%= f.label :nonmpsschool, "Non MPS School" %></label>
   <div class="controls"> 
-    <%= f.number_field :nonmpsschool %>
-  </div>
+		<%= f.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
+</div>
   </div>
   
   
