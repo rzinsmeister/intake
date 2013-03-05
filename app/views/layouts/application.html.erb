@@ -20,11 +20,11 @@
 					<%= link_to "MPS Intake", root_path, class: "brand" %>
  					 <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="icon-user"></i> Username
+              <i class="icon-user"></i><%= session[:username] %>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#">Sign Out</a></li>
+              <li><%= link_to 'Sign Out', logout_path %></li>
             </ul>
           </div>
       			<div class="nav-collapse collapse">
