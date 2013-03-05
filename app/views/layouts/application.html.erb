@@ -11,14 +11,22 @@
 <body>
     <div class="navbar"> 
       <div class="navbar-inner">
-      	<div class="container">
+    	 	<div class="container">      	
       	 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-					<%= link_to "MPS Intake", root_path, class: "brand" %>
- 					 <div class="btn-group pull-right">
+				<%= link_to "MPS Intake", root_path, class: "brand" %>
+
+ 
+   	<form class="form-search">
+  		<input type="text" class="input-medium search-query">
+  		<button type="submit" class="btn">Search</button>
+		</form>
+
+
+ 				 <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-user"></i><%= session[:username] %>
               <span class="caret"></span>
@@ -27,6 +35,7 @@
               <li><%= link_to 'Sign Out', logout_path %></li>
             </ul>
           </div>
+          
       			<div class="nav-collapse collapse">
          			<ul class="nav">
           			<li><%= link_to 'Students', entrants_path %></li>
@@ -34,9 +43,10 @@
           			<li><%= link_to 'Schools', schools_path %></li>
         			</ul>
         		</div>
-        </div>
-      </div>
-    </div>
+        
+        </div><!--container-->
+      </div><!--navbar inner-->
+    </div> <!--navbar-->
     
 <div id="page">
 
