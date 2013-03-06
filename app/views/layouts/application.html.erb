@@ -19,12 +19,12 @@
 				</a>
 				<%= link_to "MPS Intake", root_path, class: "brand" %>
 
-		   	<form class="form-search">
+		   	<div class="form-search">
 			    <%= form_tag "schoolssearch", :method => 'get' do %>  
       		  <%= text_field_tag :search, params[:search], :class=>'input-medium search-query' %>  
         		<%= submit_tag "Search", :name => nil, :class=>'btn' %>  
     			<% end %> 
-    		</form>
+    		</div>
 
  				 <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
