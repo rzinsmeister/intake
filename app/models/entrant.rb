@@ -5,6 +5,12 @@ class Entrant < ActiveRecord::Base
   belongs_to :shelter
   belongs_to :contact
 
-
+  def self.search(search)
+    if search
+      where('cnamef LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 
 end

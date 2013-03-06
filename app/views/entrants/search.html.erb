@@ -1,55 +1,10 @@
-<body>
-
 <div id="page">
 <div id="searchtitle" class="well">
 <h2>Search Results</h2>
 </div>
 
-<% if @schools.empty? %>
-  <h3 class="alert">No schools with that name.</h3>  
-  
-<% else%>
-
-<table class="table">
-  <tr>
-    <th>School Name</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Phone</th>
-    <th>Social Worker</th>
-    <th>Social Worker Phone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @schools.each do |school| %>
-  <tr>
-    <td><%= school.schoolname %></td>
-    <td><%= school.street %></td>
-    <td><%= school.city %></td>
-    <td><%= school.state %></td>
-    <td><%= school.zip %></td>
-    <td><%= school.officephone %></td>
-    <td><%= school.sswname %></td>
-    <td><%= school.sswphone %></td>
-  
-    <td><%= link_to 'Show', school %></td>
-    <td><%= link_to 'Edit', edit_school_path(school) %></td>
-    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<% end %>
-<div class="btn">
-<%= link_to 'Back', root_path %>
-</div>
-
-
 <% if @entrants.empty? %>
+
   <h3 class="alert">No entrants with that name.</h3>  
 
 <% else%>
@@ -93,7 +48,11 @@
     <td><%= entrant.shelterid %></td>
     <td><%= entrant.shelterschool %></td>
     <td><%= entrant.totaldays %></td>
- 
+    <td><% if(entrant.school.nil?) then %>
+    The entrant has no school to speak of.
+  <% else %>
+    <%= entrant.school.name %>
+  <% end %></td>
     <td><%= link_to 'Show', entrant %></td>
     <td><%= link_to 'Edit', edit_entrant_path(entrant) %></td>
     <td><%= link_to 'Destroy', entrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -105,13 +64,4 @@
 <%= link_to 'Back', root_path %>
 </div>
 
-
-
-
-
-
-
-
 </div>
-
-</body>
