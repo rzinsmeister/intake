@@ -1,3 +1,4 @@
+<div class="well">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -75,6 +76,12 @@
   <%= @entrant.note %>
 </p>
 
-
-<%= link_to 'Edit', edit_entrant_path(@entrant) %> |
+<div class="btn-group">
+<div class="btn">
+<%= link_to 'Edit', edit_entrant_path(@entrant) %>
+</div>
+<div class="btn">
 <%= link_to 'Back', entrants_path %>
+</div>
+</div>
+</div>

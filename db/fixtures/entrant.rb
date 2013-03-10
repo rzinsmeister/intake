@@ -4,7 +4,7 @@ Entrant.seed_once(:id) do |s|
 s.id = 1
 s.cnamef = "Marvin"
 s.cnamel = "Johnson"
-s.contactid = "1"
+s.contact_id = "1"
 s.dob = "05-25-2000"
 s.grade = "8"
 s.shelterid = "1"
@@ -23,7 +23,7 @@ Entrant.seed_once(:id) do |s|
 s.id = 2
 s.cnamef = "Sally"
 s.cnamel = "Powers"
-s.contactid = "2"
+s.contact_id = "2"
 s.dob = "05-25-2008"
 s.grade = "K"
 s.shelterid = "0"

@@ -73,10 +73,18 @@
     	<%= e.label :shelterid, "Shelter" %>
     	<%= e.number_field :shelterid %>
   	</div>
-  	<div class="field">
-    	<%= e.label :mnres, "MN Res" %>
-    	<%= e.text_field :mnres %>
-  	</div>
+  	
+    <div id="radiobuttons" class="field">
+  <label class="control-label">
+    <%= e.label :mnres, "MN Res" %></label>
+  <div class="controls"> 
+  	<%= radio_button_tag(:mnres, "Yes") %>
+		<%= label_tag(:mnres_yes, "Yes") %>
+		<%= radio_button_tag(:mnres, "No") %>
+		<%= label_tag(:mnres_no, "No") %>
+  </div>
+  </div>
+  	
   	<div class="field">
     	<%= e.label :entrydate, "Entry Date" %>
     	<%= e.date_select :entrydate %>
@@ -89,22 +97,40 @@
    	  <%= e.label :totaldays, "Total Days" %>
       <%= e.number_field :totaldays %>
   	</div>
-  	<div class="field">
-    	<%= e.label :lastschool, "Last School" %>
-    	<%= e.number_field :lastschool %>
-  	</div>
-  	<div class="field">
-    	<%= e.label :shelterschool, "Shelter School" %>
-    	<%= e.number_field :shelterschool %>
-  	</div>
-	  <div class="field">
-  	  <%= e.label :mpsschool, "MPS School" %>
-    	<%= e.number_field :mpsschool %>
-  	</div>
-  	<div class="field">
-    	<%= e.label :nonmpsschool, "Non MPS School" %>
-    	<%= e.number_field :nonmpsschool %>
-  	</div>
+  	
+  	  <div class="field">
+    <label class="control-label">
+    <%= e.label :lastschool, "Last School" %></label>
+  <div class="controls"> 
+  <%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
+  </div>
+  </div>
+  
+  <div class="field">
+  <label class="control-label">
+    <%= e.label :shelterschool, "Shelter School" %></label>
+	<div class="controls"> 
+		<%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
+  </div>
+  
+  <div class="field">
+      <label class="control-label">
+    <%= e.label :mpsschool, "MPS School" %></label>
+  <div class="controls"> 
+		<%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
+  </div>
+  
+  <div class="field">
+  <label class="control-label">
+    <%= e.label :nonmpsschool, "Non MPS School" %></label>
+  <div class="controls"> 
+		<%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
+</div>
+  </div>
+  	
+  	
+  	
+    
   	<div class="field">
     	<%= e.label :note, "Notes" %>
     	<%= e.text_area :note %>

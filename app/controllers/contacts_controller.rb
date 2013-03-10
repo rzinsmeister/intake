@@ -34,7 +34,9 @@ class ContactsController < ApplicationController
   # GET /contacts/new.json
   def new
     @contact = Contact.new
-	@contact.entrants.build
+		@contact.entrants.build
+		@shelters = Shelter.all
+		@schools = School.all
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -45,13 +47,17 @@ class ContactsController < ApplicationController
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
+    @shelters = Shelter.all
+		@schools = School.all
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
-	
+		@shelters = Shelter.all
+		@schools = School.all
+		
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }

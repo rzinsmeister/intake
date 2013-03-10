@@ -6,6 +6,39 @@
 /* Hide Stuff */
 ul.accessibility { display: none; }
 
+.entrants-wrapper {
+height: 600px; 
+overflow: auto;
+background-color:white;
+
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+				border-radius: 3px;
+				
+				margin-top:50px;
+				margin-bottom:40px;
+
+}
+
+
+
+div#indexbtn {
+float:left;
+}
+
+.table tbody tr th {
+border:solid 1px rgb(17,40,45);
+}
+.table tbody tr:hover th {
+    background-color:  rgb(17,40,45);
+}
+.table tbody tr:hover td {
+		background-color:rgb(165,196,187);
+}
+
+
+
+
 table th {
 background-color: rgb(17,40,45);
 color:white;
@@ -25,10 +58,11 @@ background-color: white;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
 				border-radius: 3px;
-		height:30px;
+		height:150px;
 		overflow:scroll;	
 				
 }
+
 
 .navbar {
  padding-bottom: 40px;
@@ -39,6 +73,9 @@ position:absolute;
 margin-left:18%;
 }
 
+.lookup {
+margin-left:-5%;
+}
 
 footer {
 margin-left:10%;
@@ -55,7 +92,7 @@ margin-bottom:12px;
 
 @media screen and (min-width: 300px) {
 div#page {
-margin-left: 5%;
+margin-left: 2%;
 padding-bottom:300px;
 }
 }
@@ -65,13 +102,30 @@ padding-bottom:300px;
 
 div#page {
 margin-top: 40px;
-margin-right:5%;
+margin-right:3%;
 }
+
 .form-search {
 position:absolute;
-margin-left:25%;
+margin-left:35%;
 
 }
 
 }
 
+
+
+
+@media screen and (min-width: 1200px) {
+.two-col {
+       -moz-column-count: 2;
+       -moz-column-gap: 20px;
+       -webkit-column-count: 2;
+       -webkit-column-gap: 20px;
+       column-count: 2;
+       column-count: 20px;
+       margin-left:10%;
+       
+       }
+       }
+       

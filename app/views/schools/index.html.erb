@@ -1,6 +1,12 @@
-<h1>Listing Schools</h1>
+<h1>Schools</h1>
 
-<table>
+<div id="indexbtn" class="btn">
+<%= link_to 'New School', new_school_path %>
+</div>
+
+<div class="span11 entrants-wrapper">
+
+<table class="table table-condensed table-hover">
   <tr>
     <th>School Name</th>
     <th>Address</th>
@@ -12,12 +18,11 @@
     <th>Social Worker Phone</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @schools.each do |school| %>
   <tr>
-    <td><%= school.schoolname %></td>
+    <td><%= link_to school.schoolname, school %></td>
     <td><%= school.street %></td>
     <td><%= school.city %></td>
     <td><%= school.state %></td>
@@ -25,13 +30,15 @@
     <td><%= school.officephone %></td>
     <td><%= school.sswname %></td>
     <td><%= school.sswphone %></td>
-    <td><%= link_to 'Show', school %></td>
-    <td><%= link_to 'Edit', edit_school_path(school) %></td>
-    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_school_path(school), :class=> 'btn'  %></td>
+    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
+<div class="pagination pagination-centered">
+<%= will_paginate @entrants %>
+</div>
 
-<%= link_to 'New School', new_school_path %>

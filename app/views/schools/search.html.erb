@@ -10,7 +10,10 @@
   
 <% else%>
 
-<table class="table">
+
+<div class="span11 entrants-wrapper">
+
+<table class="table table-condensed table-hover">
   <tr>
     <th>School Name</th>
     <th>Address</th>
@@ -24,7 +27,7 @@
     <th></th>
     <th></th>
   </tr>
-
+	
 <% @schools.each do |school| %>
   <tr>
     <td><%= school.schoolname %></td>
@@ -44,6 +47,8 @@
 </table>
 
 <% end %>
+</div>
+
 <div class="btn">
 <%= link_to 'Back', root_path %>
 </div>
@@ -54,7 +59,9 @@
 
 <% else%>
 
-<table class="table">
+<div class="span11 entrants-wrapper">
+
+<table class="table table-condensed table-hover ">
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
@@ -101,6 +108,8 @@
 <% end %>
 </table>
 <% end %>
+</div>
+
 <div class="btn">
 <%= link_to 'Back', root_path %>
 </div>
@@ -113,5 +122,6 @@
 
 
 </div>
+
 
 </body>

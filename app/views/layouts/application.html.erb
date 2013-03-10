@@ -7,6 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('div.pop').each(function() {
+      $(this).qtip({
+        content: $('#hide-' + $(this).attr('id')),
+        style: {
+          name: 'cream'
+},        
+        position: {
+        corner: {
+         target: 'topMiddle',
+         tooltip: 'bottomLeft'
+      }
+},
+        show: 'mouseover',
+        hide: 'mouseout'
+
+      });
+    });
+  });   
+</script>
+
+
 
 <body>
     <div class="navbar"> 
@@ -22,10 +45,9 @@
 		   	<div class="form-search">
 			    <%= form_tag "schoolssearch", :method => 'get' do %>  
       		  <%= text_field_tag :search, params[:search], :class=>'input-medium search-query' %>  
-        		<%= submit_tag "School", :name => nil, :class=>'btn' %>  
+        		<%= submit_tag "Search", :name => nil, :class=>'btn' %>  
     			<% end %>
-    			</option>
-    		</select> 
+    		
     		</div>
 
  				 <div class="btn-group pull-right">
@@ -59,9 +81,19 @@
   	  <div class="well sidebar-nav-fixed">
 	    <div id="sidebar">
 	      <ul class="nav nav-list">
+	      	<li><div id="lookup" class="input-append">
+			    <%= form_tag "schoolssearch", :method => 'get' do %>  
+      		  <%= text_field_tag :search, params[:search], :class=>'input-small text' %>  
+        		<%= submit_tag "Search", :name => nil, :class=>'btn' %>  
+    			<% end %>
+    		
+    		</div></li>
+	      	<li class="nav-header">Tables</li>
+					<li><%= link_to 'Entrants', entrants_path %></li>
+					<li><%= link_to 'Schools', schools_path %></li>
+					<li><%= link_to 'Shelters', shelters_path %></li>
 	        <li class="nav-header">Add A New</li>
-	        <li><%= link_to 'Student', new_entrant_path %></li>
-          <li><%= link_to 'Parent', new_contact_path %></li>
+	        <li><%= link_to 'Entrant', new_entrant_path %></li>
           <li><%= link_to 'School', new_school_path %></li>
           <li><%= link_to 'Shelter', new_shelter_path %></li>
 		  	</ul>

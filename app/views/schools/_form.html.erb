@@ -1,3 +1,6 @@
+<div class="form-horizontal">
+<div class="control-group">
+
 <%= form_for(@school) do |f| %>
   <% if @school.errors.any? %>
     <div id="error_explanation">
@@ -11,39 +14,42 @@
     </div>
   <% end %>
 
+<div class="two-col">
   <div class="field">
-    <%= f.label :schoolname, "School Name" %><br />
-    <%= f.text_field :schoolname %>
+    <label class="control-label"><%= f.label :schoolname, "School Name" %></label>
+  	<div class="controls"><%= f.text_field :schoolname %></div>
   </div>
   <div class="field">
-    <%= f.label :street, "Address" %><br />
-    <%= f.text_field :street %>
+    <label class="control-label"><%= f.label :street, "Address" %></label>
+    <div class="controls"><%= f.text_field :street %></div>
   </div>
   <div class="field">
-    <%= f.label :city, "City" %><br />
-    <%= f.text_field :city %>
+    <label class="control-label"><%= f.label :city, "City" %></label>
+    <div class="controls"><%= f.text_field :city %></div>
   </div>
   <div class="field">
-    <%= f.label :state, "State" %><br />
-    <%= f.text_field :state %>
+    <label class="control-label"><%= f.label :state, "State" %></label>
+    <div class="controls"><%= f.text_field :state %></div>
   </div>
   <div class="field">
-    <%= f.label :zip, "Zip" %><br />
-    <%= f.number_field :zip %>
+    <label class="control-label"><%= f.label :zip, "Zip" %></label>
+    <div class="controls"><%= f.number_field :zip %></div>
   </div>
   <div class="field">
-    <%= f.label :officephone, "Office Phone" %><br />
-    <%= f.text_field :officephone %>
+    <label class="control-label"><%= f.label :officephone, "Office Phone" %></label>
+    <div class="controls"><%= f.text_field :officephone %></div>
   </div>
   <div class="field">
-    <%= f.label :sswname, "Social Worker Name" %><br />
-    <%= f.text_field :sswname %>
+    <label class="control-label"><%= f.label :sswname, "Social Worker Name" %></label>
+    <div class="controls"><%= f.text_field :sswname %></div>
   </div>
   <div class="field">
-    <%= f.label :sswphone, "Social Worker Phone" %><br />
-    <%= f.text_field :sswphone %>
+    <label class="control-label"><%= f.label :sswphone, "Social Worker Phone" %></label>
+    <div class="controls"><%= f.text_field :sswphone %></div>
   </div>
+  <div class="controls"> 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=> 'btn'%>
+  </div>
   </div>
 <% end %>

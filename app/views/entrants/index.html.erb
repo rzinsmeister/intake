@@ -1,3 +1,5 @@
+
+
 <!-- <td colspan="3" style="text-align:center;" -->
 
 <h1>Children</h1>
@@ -8,8 +10,9 @@
 
 
 <div class="span11 entrants-wrapper">
-
-<table class="table table-condensed table-hover">
+<div id="mynav">
+<table id="mytable" class="table table-condensed table-hover table-fixed-header">
+<thead class="header">
   <tr>
     <th>Child's First Name</th>
     <th>Child's Last Name</th>
@@ -30,11 +33,13 @@
     <th></th>
     <th></th>
   </tr>
+  </thead>
+</div>
 
 <% @entrants.each do |entrant| %>
   <tr>
-    <td><%= entrant.cnamef %></td>
-    <td><%= entrant.cnamel %></td>
+    <td><%= link_to entrant.cnamef, entrant %></td>
+    <td><%= link_to entrant.cnamel, entrant %></td>
     <td><%= entrant.contact_id %></td>
     <td><%= entrant.dob %></td>
     <td><%= entrant.grade %></td>
@@ -43,7 +48,21 @@
     <td><%= entrant.entrydate %></td>
     <td><%= entrant.exitdate %></td>
     <td><%= entrant.totaldays %></td>
-    <td><%= entrant.lastschool %></td>
+    <td>
+      <% if(entrant.lastschool.nil?) then %>
+        NA
+      <% else %>
+        <div id="<%= entrant.id %>" class="pop">    
+            <%= link_to School.find(entrant.lastschool).schoolname, school_path(entrant.lastschool) %>
+        </div>
+        <div id="hide-<%= entrant.id %>" class="hide">
+        <%= entrant.lastschool.sswphone %>
+        <%= entrant.lastschool.sswname %>
+        </div>
+      <% end %>
+      
+    
+    </td>
     <td><%= entrant.shelterschool %></td>
     <td><%= entrant.mpsschool %></td>
     <td><%= entrant.nonmpsschool %></td>
@@ -55,6 +74,13 @@
 <% end %>
 </table>
 </div>
-
+</div>
 <br />
+
+<div class="pagination pagination-centered">
+<%= will_paginate @entrants %>
+</div>
+
+
+
 
