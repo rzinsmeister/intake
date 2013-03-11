@@ -81,13 +81,6 @@
   	  <div class="well sidebar-nav-fixed">
 	    <div id="sidebar">
 	      <ul class="nav nav-list">
-	      	<li><div id="lookup" class="input-append">
-			    <%= form_tag "schoolssearch", :method => 'get' do %>  
-      		  <%= text_field_tag :search, params[:search], :class=>'input-small text' %>  
-        		<%= submit_tag "Search", :name => nil, :class=>'btn' %>  
-    			<% end %>
-    		
-    		</div></li>
 	      	<li class="nav-header">Tables</li>
 					<li><%= link_to 'Entrants', entrants_path %></li>
 					<li><%= link_to 'Schools', schools_path %></li>
@@ -96,6 +89,8 @@
 	        <li><%= link_to 'Entrant', new_contact_path %></li>
           <li><%= link_to 'School', new_school_path %></li>
           <li><%= link_to 'Shelter', new_shelter_path %></li>
+          <li class="nav-header">Reports</li>
+	        <li><%= link_to 'Entrant', new_contact_path %></li>
 		  	</ul>
       </div> <!--Sidebar-->
       </div> <!--Sidebar well-->

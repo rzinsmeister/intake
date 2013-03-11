@@ -12,7 +12,7 @@ class EntrantsController < ApplicationController
   # GET /entrants.json
   def index
     @entrants = Entrant.paginate(:page => params[:page], :per_page =>10)
-
+		
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @entrants }

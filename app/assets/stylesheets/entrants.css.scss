@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+td.dob {
+color:red;
+min-width:100px;
+}
 
-
+td.note { 
+max-width:100px; white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;}
 
 div#indexbtn {
 float:left;

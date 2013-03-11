@@ -54,9 +54,21 @@
         </div>
       <% end %></td>
     
-    <td><%= entrant.dob %></td>
+    <td class="dob"><%= entrant.dob %></td>
     <td><%= entrant.grade %></td>
-    <td><%= entrant.shelterid %></td>
+    
+    <td><% if(entrant.shelterid.nil?) then %>
+    		NA
+    	<% else %>
+         <div id="shelter-<%= entrant.id %>" class="pop">    
+            <%= link_to Shelter.find(entrant.shelterid).sheltername, shelter_path(entrant.shelterid) %>
+        </div>
+        <div id="hide-shelter-<%= entrant.id %>" class="hide">
+        <%= entrant.shelter.sheltername %>
+        </div>
+      <% end %>
+      </td>
+      
     <td><%= entrant.mnres %></td>
     <td><%= entrant.entrydate %></td>
     <td><%= entrant.exitdate %></td>
@@ -65,10 +77,10 @@
       <% if(entrant.lastschool.nil?) then %>
         NA
       <% else %>
-        <div id="<%= entrant.id %>" class="pop">    
+        <div id="lastschool-<%= entrant.id %>" class="pop">    
             <%= link_to School.find(entrant.lastschool).schoolname, school_path(entrant.lastschool) %>
         </div>
-        <div id="hide-<%= entrant.id %>" class="hide">
+        <div id="hide-lastschool-<%= entrant.id %>" class="hide">
         <%= entrant.lastschool.sswphone %>
         <%= entrant.lastschool.sswname %>
         </div>
@@ -79,7 +91,7 @@
     <td><%= entrant.shelterschool %></td>
     <td><%= entrant.mpsschool %></td>
     <td><%= entrant.nonmpsschool %></td>
-    <td><%= entrant.note %></td>
+    <td class="note"><%= entrant.note %></td>
     <td><%= link_to 'Show', entrant %></td>
     <td><%= link_to 'Edit', edit_entrant_path(entrant) %></td>
     <td><%= link_to 'Destroy', entrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
