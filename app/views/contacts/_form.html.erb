@@ -74,12 +74,11 @@
     	<%= e.number_field :shelterid %>
   	</div>
   	
-    <div id="radiobuttons" class="field">
+  <div class="field"> 
   <label class="control-label">
     <%= e.label :mnres, "MN Res" %></label>
   <div class="controls"> 
-  	<%= e.radio_button :mnres, "Yes" %>
-		<%= e.radio_button :mnres, "No" %>
+    <%= e.select :mnres, options_for_select(["Yes","No"]) %>
   </div>
   </div>
   	

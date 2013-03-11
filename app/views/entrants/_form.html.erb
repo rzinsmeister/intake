@@ -66,17 +66,13 @@
   </div>
   </div>
   
-  <div id="radiobuttons" class="field">
+  <div class="field"> 
   <label class="control-label">
     <%= f.label :mnres, "MN Res" %></label>
   <div class="controls"> 
-  	<%= radio_button_tag(:mnres, "Yes") %>
-		<%= label_tag(:mnres_yes, "Yes") %>
-		<%= radio_button_tag(:mnres, "No") %>
-		<%= label_tag(:mnres_no, "No") %>
+    <%= f.select :mnres, options_for_select(["Yes","No"]) %>
   </div>
   </div>
-  
   
   <div class="field">
   <label class="control-label">

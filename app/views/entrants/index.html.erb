@@ -19,11 +19,11 @@
     <th>Guardian</th>
     <th>Date of Birth</th>
     <th>Grade</th>
-    <th>Shelterid</th>
-    <th>Mnres</th>
-    <th>Entrydate</th>
-    <th>Exitdate</th>
-    <th>Totaldays</th>
+    <th>Shelter</th>
+    <th>MN Res</th>
+    <th>Entry Date</th>
+    <th>Exit Date</th>
+    <th>Total</th>
     <th>Lastschool</th>
     <th>Shelterschool</th>
     <th>Mpsschool</th>
@@ -64,14 +64,14 @@
             <%= link_to Shelter.find(entrant.shelterid).sheltername, shelter_path(entrant.shelterid) %>
         </div>
         <div id="hide-shelter-<%= entrant.id %>" class="hide">
-        <%= entrant.shelter.sheltername %>
+        <%= entrant.shelter.phone %>
         </div>
       <% end %>
       </td>
       
     <td><%= entrant.mnres %></td>
-    <td><%= entrant.entrydate %></td>
-    <td><%= entrant.exitdate %></td>
+    <td class="dob"><%= entrant.entrydate %></td>
+    <td class="dob"><%= entrant.exitdate %></td>
     <td><%= entrant.totaldays %></td>
     <td>
       <% if(entrant.lastschool.nil?) then %>
