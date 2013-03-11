@@ -78,10 +78,8 @@
   <label class="control-label">
     <%= e.label :mnres, "MN Res" %></label>
   <div class="controls"> 
-  	<%= radio_button_tag(:mnres, "Yes") %>
-		<%= label_tag(:mnres_yes, "Yes") %>
-		<%= radio_button_tag(:mnres, "No") %>
-		<%= label_tag(:mnres_no, "No") %>
+  	<%= e.radio_button :mnres, "Yes" %>
+		<%= e.radio_button :mnres, "No" %>
   </div>
   </div>
   	

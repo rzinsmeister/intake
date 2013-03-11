@@ -2,21 +2,21 @@
 
 <!-- <td colspan="3" style="text-align:center;" -->
 
-<h1>Children</h1>
+<h1>Entrants</h1>
 
 <div id="indexbtn" class="btn">
-<%= link_to 'New Entrant', new_entrant_path %>
+<%= link_to 'New Entrant', new_contact_path %>
 </div>
 
 
 <div class="span11 entrants-wrapper">
-<div id="mynav">
+
 <table id="mytable" class="table table-condensed table-hover table-fixed-header">
 <thead class="header">
   <tr>
     <th>Child's First Name</th>
     <th>Child's Last Name</th>
-    <th>Contactid</th>
+    <th>Guardian</th>
     <th>Date of Birth</th>
     <th>Grade</th>
     <th>Shelterid</th>
@@ -40,7 +40,20 @@
   <tr>
     <td><%= link_to entrant.cnamef, entrant %></td>
     <td><%= link_to entrant.cnamel, entrant %></td>
-    <td><%= entrant.contact_id %></td>
+    
+    <td>    	<% if(entrant.contact_id.nil?) then %>
+    		NA
+    	<% else %>
+    		<div id="<%= entrant.id %>" class="pop">
+        	<%= link_to entrant.contact.pnamef + " " + entrant.contact.pnamel, contact_path(entrant.contact.id) %>
+        </div>
+        <div id="hide-<%= entrant.id %>" class="hide">
+        <%= entrant.contact.pnamef %>
+        <%= entrant.contact.pnamel %>
+        <%= entrant.contact.phone %>
+        </div>
+      <% end %></td>
+    
     <td><%= entrant.dob %></td>
     <td><%= entrant.grade %></td>
     <td><%= entrant.shelterid %></td>
@@ -73,7 +86,6 @@
   </tr>
 <% end %>
 </table>
-</div>
 </div>
 <br />
 
