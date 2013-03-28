@@ -24,10 +24,14 @@
     <th>Entry Date</th>
     <th>Exit Date</th>
     <th>Total</th>
+    <th>Last State</th>
+    <th>Last City</th>
     <th>Lastschool</th>
-    <th>Shelterschool</th>
-    <th>Mpsschool</th>
-    <th>Nonmpsschool</th>
+		<th>Student Id</th>
+		<th>Bus</th>
+		<th>Needs</th>
+		<th>Discovery</th>
+		<th>Transport</th>
     <th>Note</th>
     <th></th>
     <th></th>
@@ -73,6 +77,8 @@
     <td class="dob"><%= entrant.entrydate %></td>
     <td class="dob"><%= entrant.exitdate %></td>
     <td><%= entrant.totaldays %></td>
+    <td><%= entrant.laststate %></td>
+    <td><%= entrant.lastcity %></td>
     <td>
       <% if(entrant.lastschool.nil?) then %>
         NA
@@ -88,9 +94,13 @@
       
     
     </td>
-    <td><%= entrant.shelterschool %></td>
-    <td><%= entrant.mpsschool %></td>
-    <td><%= entrant.nonmpsschool %></td>
+    
+    <td><%= entrant.studentid %></td>
+    <td><%= entrant.bus %></td>
+    <td><%= entrant.needs %></td>
+    <td><%= entrant.discovery %></td>
+    <td><%= entrant.transport %></td>
+
     <td class="note"><%= entrant.note %></td>
     <td><%= link_to 'Show', entrant %></td>
     <td><%= link_to 'Edit', edit_entrant_path(entrant) %></td>

@@ -52,23 +52,47 @@
 </p>
 
 <p>
+  <b>Laststate:</b>
+  <%= @entrant.laststate %>
+</p>
+
+<p>
+  <b>Lastcity:</b>
+  <%= @entrant.lastcity %>
+</p>
+
+<p>
   <b>Lastschool:</b>
-  <%= @entrant.lastschool %>
+  <% if(@entrant.lastschool.nil?) then %>
+			NA
+  <% else %>  
+    <%= @entrant.lastschool.schoolname %>
+  <% end %>
 </p>
 
 <p>
-  <b>Shelterschool:</b>
-  <%= @entrant.shelterschool %>
+  <b>Studentid:</b>
+  <%= @entrant.studentid %>
 </p>
 
 <p>
-  <b>Mpsschool:</b>
-  <%= @entrant.mpsschool %>
+  <b>Bus:</b>
+  <%= @entrant.bus %>
 </p>
 
 <p>
-  <b>Nonmpsschool:</b>
-  <%= @entrant.nonmpsschool %>
+  <b>Needs:</b>
+  <%= @entrant.needs %>
+</p>
+
+<p>
+  <b>Discovery:</b>
+  <%= @entrant.discovery %>
+</p>
+
+<p>
+  <b>transport:</b>
+  <%= @entrant.transport %>
 </p>
 
 <p>

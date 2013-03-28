@@ -23,7 +23,9 @@ class EntrantsController < ApplicationController
   # GET /entrants/1.json
   def show
     @entrant = Entrant.find(params[:id])
-
+    @shelters = Shelter.all
+    @schools = School.all
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @entrant }

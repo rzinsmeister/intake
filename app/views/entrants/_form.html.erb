@@ -100,6 +100,20 @@
   </div>
   
   <div class="field">
+  <label class="control-label"><%= f.label :laststate, "Last State" %></label>
+  <div class="controls"> 
+    <%= f.text_field :laststate %>
+  </div>
+  </div>
+  
+  <div class="field">
+  <label class="control-label"><%= f.label :lastcity, "Last City" %></label>
+  <div class="controls"> 
+    <%= f.text_field :lastcity %>
+  </div>
+  </div>
+  
+  <div class="field">
     <label class="control-label">
     <%= f.label :lastschool, "Last School" %></label>
   <div class="controls"> 
@@ -109,27 +123,45 @@
   
   <div class="field">
   <label class="control-label">
-    <%= f.label :shelterschool, "Shelter School" %></label>
-	<div class="controls"> 
-		<%= f.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
-  </div>
-  
-  <div class="field">
-      <label class="control-label">
-    <%= f.label :mpsschool, "MPS School" %></label>
+    <%= f.label :studentid, "studentid" %></label>
   <div class="controls"> 
-		<%= f.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
+    <%= f.number_field :studentid %>
   </div>
-  
-  <div class="field">
+	</div>
+
+  <div class="field"> 
   <label class="control-label">
-    <%= f.label :nonmpsschool, "Non MPS School" %></label>
+    <%= f.label :bus, "Bus" %></label>
   <div class="controls"> 
-		<%= f.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
-</div>
+    <%= f.select :bus, options_for_select(["Yes","No"]) %>
   </div>
-  
-  
+  </div>
+
+  <div class="field"> 
+  <label class="control-label">
+    <%= f.label :needs, "Needs" %></label>
+  <div class="controls"> 
+    <%= f.select :needs, options_for_select(["Yes","No"]) %>
+  </div>
+  </div>
+	
+	<div class="field"> 
+  <label class="control-label">
+    <%= f.label :discovery, "Discovery" %></label>
+  <div class="controls"> 
+    <%= f.select :discovery, options_for_select(["Yes","No"]) %>
+  </div>
+  </div>
+	
+  <div class="field"> 
+  <label class="control-label">
+    <%= f.label :transport, "Transport" %></label>
+  <div class="controls"> 
+    <%= f.select :transport, options_for_select(["Yes","No"]) %>
+  </div>
+  </div>
+
+    
   <div class="field">
         <label class="control-label">
     <%= f.label :note, "Notes" %></label>
