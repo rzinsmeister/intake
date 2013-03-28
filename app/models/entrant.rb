@@ -1,5 +1,5 @@
 class Entrant < ActiveRecord::Base
-  attr_accessible :cnamef, :cnamel, :contact_id, :dob, :entrydate, :exitdate, :grade, :lastschool, :mnres, :mpsschool, :nonmpsschool, :note, :shelterid, :shelterschool, :totaldays
+  attr_accessible :cnamef, :cnamel, :contact_id, :dob, :entrydate, :exitdate, :grade, :lastschool, :mnres, :mpsschool, :nonmpsschool, :note, :shelterid, :shelterschool, :totaldays, :studentid, :bus, :lastcity, :laststate, :needs, :discovery, :transport
 
   belongs_to :school
   belongs_to :lastschool, :foreign_key => "lastschool", :class_name => "School"

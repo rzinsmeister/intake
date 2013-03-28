@@ -118,6 +118,46 @@
 			<%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
 		</div>
   	</div>
+  	<div class="field">
+    	<%= task_form.label :studentid, "ID Number" %>
+    	<%= task_form.number_field :studentid %>
+  	</div>
+  	<div class="field"> 
+  	<label class="control-label">
+    	<%= task_form.label :bus, "Bus Setup" %></label>
+  	<div class="controls"> 
+    	<%= task_form.select :bus, options_for_select(["Yes","No"]) %>
+  	</div>
+  	</div>
+  	<div>
+    	<%= task_form.label :laststate, "Last State" %>
+    	<%= task_form.text_field :laststate %>
+  	</div>
+  	<div>
+    	<%= task_form.label :lastcity, "Last City" %>
+    	<%= task_form.text_field :lastcity %>
+  	</div>
+  	<div class="field"> 
+  	<label class="control-label">
+    	<%= task_form.label :needs, "Spec Needs" %></label>
+  	<div class="controls"> 
+    	<%= task_form.select :needs, options_for_select(["Yes","No"]) %>
+  	</div>
+  	</div>
+  	<div class="field"> 
+  	<label class="control-label">
+    	<%= task_form.label :discovery, "Discovery" %></label>
+  	<div class="controls"> 
+    	<%= task_form.select :discovery, options_for_select(["Yes","No"]) %>
+  	</div>
+  	</div>
+  	<div class="field"> 
+  	<label class="control-label">
+    	<%= task_form.label :transport, "Transport" %></label>
+  	<div class="controls"> 
+    	<%= task_form.select :transport, options_for_select(["Yes","No"]) %>
+  	</div>
+  	</div>
     
   	<div class="field">
     	<%= task_form.label :note, "Notes" %>
@@ -126,6 +166,7 @@
   </div>
   	<% end %>
     <%= f.link_to_add "Add a task", :entrants %>
+
   	
   <div class="actions">
     <%= f.submit :class=> 'btn' %>
