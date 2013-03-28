@@ -1,4 +1,4 @@
-<%= form_for @contact do |f| %>
+<%= nested_form_for @contact do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -40,105 +40,92 @@
     <%= f.text_field :phone %>
   </div>
   
-  <div class="field">
-    <%= f.label :entrydate, "Entry Date" %>
-    <%= f.date_select :entrydate %>
-  </div>
-  <div class="field">
-    <%= f.label :exitdate, "Exit Date" %>
-    <%= f.date_select :exitdate %>
-  </div>
+
   
-  
-  
-   <%= f.fields_for :entrants do |e| %>
+   <%= f.fields_for :entrants do |task_form| %>
    
     <div>
-    	<%= e.label :cnamef, "Child's First Name" %>
-    	<%= e.text_field :cnamef %>
+    	<%= task_form.label :cnamef, "Child's First Name" %>
+    	<%= task_form.text_field :cnamef %>
   	</div>
   	<div class="field">
-    	<%= e.label :cnamel, "Child's Last Name" %>
-    	<%= e.text_field :cnamel %>
-    </div>
+    	<%= task_form.label :cnamel, "Child's Last Name" %>
+    	<%= task_form.text_field :cnamel %>
+    </div>    
   	<div class="field">
-    	<%= e.label :dob, "Date of Birth" %>
-    	<%= e.date_select :dob %>
+    	<%= task_form.label :dob, "Date of Birth" %>
+    	<%= task_form.date_select :dob %>
   	</div>
   	<div class="field">
-    	<%= e.label :grade, "Grade" %>
-    	<%= e.text_field :grade %>
+    	<%= task_form.label :grade, "Grade" %>
+    	<%= task_form.text_field :grade %>
   	</div>
   	<div class="field">
-    	<%= e.label :shelterid, "Shelter" %>
-    	<%= e.number_field :shelterid %>
+    	<%= task_form.label :shelterid, "Shelter" %>
+    	<%= task_form.number_field :shelterid %>
+  	</div>
+  	<div class="field">
+    	<%= task_form.label :entrydate, "Entry Date" %>
+    	<%= task_form.date_select :entrydate %>
+  	</div>
+  	<div class="field">
+    	<%= task_form.label :exitdate, "Exit Date" %>
+    	<%= task_form.date_select :exitdate %>
+  	</div>
+  	<div class="field">
+   	  <%= task_form.label :totaldays, "Total Days" %>
+      <%= task_form.number_field :totaldays %>
   	</div>
   	
-  <div class="field"> 
-  <label class="control-label">
-    <%= e.label :mnres, "MN Res" %></label>
-  <div class="controls"> 
-    <%= e.select :mnres, options_for_select(["Yes","No"]) %>
-  </div>
-  </div>
-  	
-  	<div class="field">
-    	<%= e.label :entrydate, "Entry Date" %>
-    	<%= e.date_select :entrydate %>
+  	<div class="field"> 
+  	<label class="control-label">
+    	<%= task_form.label :mnres, "MN Res" %></label>
+  	<div class="controls"> 
+    	<%= task_form.select :mnres, options_for_select(["Yes","No"]) %>
   	</div>
-	  <div class="field">
-  	  <%= e.label :exitdate, "Exit Date" %>
-    	<%= e.date_select :exitdate %>
   	</div>
-  	<div class="field">
-   	  <%= e.label :totaldays, "Total Days" %>
-      <%= e.number_field :totaldays %>
-  	</div>
-  	
+  
   	<div class="btn">
 			<%= link_to 'New School', new_school_path, :target => '_blank' %>
-
 		</div>
 		
-  	  <div class="field">
+  	<div class="field">
     <label class="control-label">
-    <%= e.label :lastschool, "Last School" %></label>
-  <div class="controls"> 
-  <%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
-  </div>
-  </div>
+    	<%= task_form.label :lastschool, "Last School" %></label>
+  	<div class="controls"> 
+  		<%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
+  	</div>
+  	</div>
   
-  <div class="field">
-  <label class="control-label">
-    <%= e.label :shelterschool, "Shelter School" %></label>
-	<div class="controls"> 
-		<%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
-  </div>
+  	<div class="field">
+  	<label class="control-label">
+    	<%= task_form.label :shelterschool, "Shelter School" %></label>
+		<div class="controls"> 
+			<%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
+  	</div>
   
-  <div class="field">
-      <label class="control-label">
-    <%= e.label :mpsschool, "MPS School" %></label>
-  <div class="controls"> 
-		<%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
-  </div>
+  	<div class="field">
+    <label class="control-label">
+    	<%= task_form.label :mpsschool, "MPS School" %></label>
+  	<div class="controls"> 
+			<%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>  </div>
+  	</div>
   
-  <div class="field">
-  <label class="control-label">
-    <%= e.label :nonmpsschool, "Non MPS School" %></label>
-  <div class="controls"> 
-		<%= e.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
-</div>
-  </div>
-  	
-  	
-  	
+  	<div class="field">
+  	<label class="control-label">
+    	<%= task_form.label :nonmpsschool, "Non MPS School" %></label>
+  	<div class="controls"> 
+			<%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %>
+		</div>
+  	</div>
     
   	<div class="field">
-    	<%= e.label :note, "Notes" %>
-    	<%= e.text_area :note %>
+    	<%= task_form.label :note, "Notes" %>
+    	<%= task_form.text_area :note %>
   	</div>
   </div>
   	<% end %>
+    <%= f.link_to_add "Add a task", :entrants %>
   	
   <div class="actions">
     <%= f.submit :class=> 'btn' %>

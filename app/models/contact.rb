@@ -3,4 +3,5 @@ class Contact < ActiveRecord::Base
     
   has_many :entrants
   accepts_nested_attributes_for :entrants
+  
 end

@@ -3,12 +3,14 @@ class Entrant < ActiveRecord::Base
 
   belongs_to :school
   belongs_to :lastschool, :foreign_key => "lastschool", :class_name => "School"
-
   belongs_to :shelter, :foreign_key => "shelterid", :class_name => "Shelter"
-  
   belongs_to :contact
 
 
+def days_between(entrydate, exitdate)
+
+
+end
 
   def self.search(search)
     if search
