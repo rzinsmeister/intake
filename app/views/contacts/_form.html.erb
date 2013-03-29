@@ -14,9 +14,11 @@
       </ul>
     </div>
   <% end %>
-  
-<div class="guardian">  
+
+ 
+<div class="guardian" >  
 <div class="two-col">
+
   <div class="field">
     <label class="control-label"><%= f.label :pnamef, "Guardian's First Name"  %></label>
     <div class="controls"><%= f.text_field :pnamef %></div>
@@ -47,6 +49,10 @@
   </div>
  </div> 
  </div>
+
+<div class="line">
+
+</div>
  
 
  
@@ -62,19 +68,23 @@
     </div>    
   	<div class="field">
     	<label class="control-label"><%= task_form.label :dob, "Date of Birth" %></label>
-    	<div class="controls"><%= task_form.date_select :dob %></div>
+    	<div class="controls"><%= task_form.date_select :dob, :start_year => 1990  %></div>
   	</div>
   	<div class="field">
     	<label class="control-label"><%= task_form.label :grade, "Grade" %></label>
-    	<div class="controls"><%= task_form.text_field :grade %></div>
+    	<div class="controls"><%= task_form.select :grade, options_for_select(["SCR","ECSC","Pre","K","1","2","3","4","5","6","7","8","9","10","11","12"]) %></div>
   	</div>
-
+  
+  	<div class="field">
+    	<label class="control-label"><%= task_form.label :studentid, "Student ID Number" %></label>
+    	<div class="controls"><%= task_form.number_field :studentid %></div>
+  	</div>
  
   <div id="stay" class="well">  
 			<%= task_form.fields_for :stays do |sub_form| %>
 			  	<div class="fields">
   					<label class="control-label"><%= sub_form.label :shelter_id, "Shelter" %></label>
-    				<div class="controls"><%= sub_form.number_field :shelter_id %></div>
+    				<div class="controls"><%= sub_form.select :shelter_id, options_from_collection_for_select(@shelters, 'id', 'sheltername') %></div>
   				</div>
 			  	<div class="field">
     				<label class="control-label"><%= sub_form.label :entrydate, "Entry Date" %></label>
@@ -83,10 +93,6 @@
   				<div class="field">
     				<label class="control-label"><%= sub_form.label :exitdate, "Exit Date" %></label>
     				<div class="controls"><%= sub_form.date_select :exitdate %></div>
-  				</div>
-  				<div class="fields">
-  					<label class="control-label"><%= sub_form.label :totaldays, "Total Days" %></label>
-    				<div class="controls"><%= sub_form.number_field :totaldays %></div>
   				</div>
 		  <% end %>
  			 <div class="controls"> 
@@ -117,25 +123,21 @@
     	<label class="control-label"><%= task_form.label :lastschool, "Last School" %></label>
   		<div class="controls"><%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
   	</div>
-  
-  	<div class="field">
-    	<label class="control-label"><%= task_form.label :studentid, "ID Number" %></label>
-    	<div class="controls"><%= task_form.number_field :studentid %></div>
-  	</div>
-  	<div class="field"> 
-  		<label class="control-label"><%= task_form.label :bus, "Bus Setup" %></label>
-  		<div class="controls"><%= task_form.select :bus, options_for_select(["Yes","No"]) %></div>
-  	</div>
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :needs, "Spec Needs" %></label>
-  		<div class="controls"><%= task_form.select :needs, options_for_select(["Gifted","Spec Ed"]) %></div>
+  		<div class="controls"><%= task_form.select :needs, options_for_select(["Gifted","Spec Ed","IEP","Asthma","Allergies","ADHD","Health Concern"]) %></div>
   	</div>
+  	<div class="field"> 
+  		<label class="control-label"><%= task_form.label :bus, "Bus Needed" %></label>
+  		<div class="controls"><%= task_form.select :bus, options_for_select(["Yes","No"]) %></div>
+  	</div>
+
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :discovery, "Entered in Discovery" %></label>
   		<div class="controls"><%= task_form.select :discovery, options_for_select(["Yes","No"]) %></div>
   	</div>
   	<div class="field"> 
-  		<label class="control-label"><%= task_form.label :transport, "Transport" %></label>
+  		<label class="control-label"><%= task_form.label :transport, "Transport Set Up" %></label>
   		<div class="controls"><%= task_form.select :transport, options_for_select(["Yes","No"]) %></div>
   	</div>
     

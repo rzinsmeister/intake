@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "colors";
+
+
 /*Styling for Nested Form Entering*/
 
 div.guardian {
@@ -9,8 +12,16 @@ color: rgb(17,40,45);
 font-weight:bold;
 }
 
+div.line {
+background-color:$background;
+height:1px;
+margin-bottom:24px;
+margin-left:15%;
+margin-right:3%;
+}
+
 div#stay {
-background-color:white;
+background-color: rgb(235,235,235);
 }
 
 td.dob {
@@ -53,7 +64,6 @@ div.guardian .two-col {
        }
 
 div.entrant {
-color:red;
        -moz-column-count: 1;
        -moz-column-gap: 20px;
        -webkit-column-count: 1;

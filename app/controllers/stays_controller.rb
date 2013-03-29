@@ -8,40 +8,30 @@ class StaysController < ApplicationController
   end
 
 
-# GET /stays
-  # GET /stays.json
   	def index
 
     end
   end
 
-  # GET /stays/1
-  # GET /stays/1.json
+
   def show
 
   end
 
-  # GET /stays/new
-  # GET /stays/new.json
+
   def new
     @stay = Stay.new
 		@contact = Contact.new
 		@entrant = Entrant.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @stay }
     end
   end
 
-  # GET /stays/1/edit
   def edit
-
 
   end
 
-  # POST /stays
-  # POST /stays.json
+
   def create
     @stay = Stay.new(params[:stay])
     @contact = Contact.new
