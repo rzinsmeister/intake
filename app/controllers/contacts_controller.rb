@@ -37,6 +37,8 @@ class ContactsController < ApplicationController
 		@contact.entrants.build
 		@shelters = Shelter.all
 		@schools = School.all
+		@stays = Stay.all
+
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -49,6 +51,8 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @shelters = Shelter.all
 		@schools = School.all
+		@stays = Stay.all
+
   end
 
   # POST /contacts
@@ -57,7 +61,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
 		@shelters = Shelter.all
 		@schools = School.all
-		
+		@stays = Stay.all
+
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }

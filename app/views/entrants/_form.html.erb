@@ -73,31 +73,7 @@
     <%= f.select :mnres, options_for_select(["Yes","No"]) %>
   </div>
   </div>
-  
-  <div class="field">
-  <label class="control-label">
-    <%= f.label :entrydate, "Entry Date" %></label>
-  <div class="controls"> 
-    <%= f.date_select :entrydate %>
-  </div>
-  </div>
-  
-  
-  <div class="field">
-  <label class="control-label"> 
-  	<%= f.label :exitdate, "Exit Date" %></label>
-  <div class="controls"> 
-    <%= f.date_select :exitdate %>
-  </div>
-  </div>
-  
-  <div class="field">
-  <label class="control-label">
-    <%= f.label :totaldays, "Total Days" %></label>
-   <div class="controls"> 
-    <%= f.number_field :totaldays %>
-  </div>
-  </div>
+
   
   <div class="field">
   <label class="control-label"><%= f.label :laststate, "Last State" %></label>
