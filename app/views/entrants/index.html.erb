@@ -19,16 +19,11 @@
     <th>Guardian</th>
     <th>Date of Birth</th>
     <th>Grade</th>
+    <th>ID</th>
     <th>Shelter</th>
-    <th>MN Res</th>
-    <th>Last State</th>
-    <th>Last City</th>
-    <th>Lastschool</th>
-		<th>Student Id</th>
-		<th>Bus</th>
-		<th>Needs</th>
-		<th>Discovery</th>
-		<th>Transport</th>
+		<th>Bus Needed</th>
+		<th>Entered in Discovery</th>
+		<th>Transport Setup</th>
     <th>Note</th>
     <th></th>
     <th></th>
@@ -57,48 +52,21 @@
     
     <td class="dob"><%= entrant.dob %></td>
     <td><%= entrant.grade %></td>
+    <td><%= entrant.studentid%></td>
     
     <td><% if(entrant.shelterid.nil?) then %>
     		NA
-    	<% else %>
-         <div id="shelter-<%= entrant.id %>" class="pop">    
+    	<% else %>   
             <%= link_to Shelter.find(entrant.shelterid).sheltername, shelter_path(entrant.shelterid) %>
-        </div>
-        <div id="hide-shelter-<%= entrant.id %>" class="hide">
-        <%= entrant.shelter.phone %>
-        </div>
       <% end %>
       </td>
-      
-    <td><%= entrant.mnres %></td>
-    <td><%= entrant.laststate %></td>
-    <td><%= entrant.lastcity %></td>
-    <td>
-      <% if(entrant.lastschool.nil?) then %>
-        NA
-      <% else %>
-        <div id="lastschool-<%= entrant.id %>" class="pop">    
-            <%= link_to School.find(entrant.lastschool).schoolname, school_path(entrant.lastschool) %>
-        </div>
-        <div id="hide-lastschool-<%= entrant.id %>" class="hide">
-        <%= entrant.lastschool.sswphone %>
-        <%= entrant.lastschool.sswname %>
-        </div>
-      <% end %>
-      
-    
-    </td>
-    
-    <td><%= entrant.studentid %></td>
     <td><%= entrant.bus %></td>
-    <td><%= entrant.needs %></td>
     <td><%= entrant.discovery %></td>
     <td><%= entrant.transport %></td>
 
     <td class="note"><%= entrant.note %></td>
-    <td><%= link_to 'Show', entrant %></td>
-    <td><%= link_to 'Edit', edit_entrant_path(entrant) %></td>
-    <td><%= link_to 'Destroy', entrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_entrant_path(entrant), :class=> 'btn' %></td>
+    <td><%= link_to 'Destroy', entrant, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
   </tr>
 <% end %>
 </table>

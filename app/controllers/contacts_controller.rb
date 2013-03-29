@@ -38,7 +38,7 @@ class ContactsController < ApplicationController
 		@shelters = Shelter.all
 		@schools = School.all
 		@stays = Stay.all
-
+		@needs = Need.all
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -62,6 +62,7 @@ class ContactsController < ApplicationController
 		@shelters = Shelter.all
 		@schools = School.all
 		@stays = Stay.all
+		@needs = Need.all
 
     respond_to do |format|
       if @contact.save

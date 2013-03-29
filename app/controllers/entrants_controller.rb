@@ -25,6 +25,8 @@ class EntrantsController < ApplicationController
     @entrant = Entrant.find(params[:id])
     @shelters = Shelter.all
     @schools = School.all
+    @stays = Stay.all
+		@needs = @entrant.needs
     
     respond_to do |format|
       format.html # show.html.erb

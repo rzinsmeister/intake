@@ -123,9 +123,24 @@
     	<label class="control-label"><%= task_form.label :lastschool, "Last School" %></label>
   		<div class="controls"><%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
   	</div>
+  	
+  	<%= task_form.fields_for :entrants_needs do |need_form| %>
+
   	<div class="field"> 
-  		<label class="control-label"><%= task_form.label :needs, "Spec Needs" %></label>
-  		<div class="controls"><%= task_form.select :needs, options_for_select(["Gifted","Spec Ed","IEP","Asthma","Allergies","ADHD","Health Concern"]) %></div>
+  		<label class="control-label"><%= need_form.label :item, "Spec Needs" %></label>
+  		<div class="controls"><%= need_form.select :need_id, options_from_collection_for_select(@needs, 'id', 'item') %></div>
+  	    <%= need_form.hidden_field :entrant_id %>
+  	</div>
+  	<% end %>
+  	<div class="controls"> 
+    	<%= task_form.link_to_add "Add A Special Need", :entrants_needs, :class=> 'btn' %>
+		</div>
+		</div>
+  	
+  	
+  	<div class="field"> 
+  		<label class="control-label"><%= task_form.label :language, "Language" %></label>
+  		<div class="controls"><%= task_form.select :language, options_for_select(["Spanish","Somali","Hmong","Other"]) %></div>
   	</div>
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :bus, "Bus Needed" %></label>
@@ -134,11 +149,11 @@
 
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :discovery, "Entered in Discovery" %></label>
-  		<div class="controls"><%= task_form.select :discovery, options_for_select(["Yes","No"]) %></div>
+  		<div class="controls"><%= task_form.select :discovery, options_for_select(["No","Yes"]) %></div>
   	</div>
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :transport, "Transport Set Up" %></label>
-  		<div class="controls"><%= task_form.select :transport, options_for_select(["Yes","No"]) %></div>
+  		<div class="controls"><%= task_form.select :transport, options_for_select(["No","Yes"]) %></div>
   	</div>
     
   	<div class="field">

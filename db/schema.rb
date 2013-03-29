@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130329160504) do
+ActiveRecord::Schema.define(:version => 20130329232708) do
 
   create_table "contacts", :force => true do |t|
     t.string   "pnamef"
@@ -46,9 +46,18 @@ ActiveRecord::Schema.define(:version => 20130329160504) do
     t.string   "bus"
     t.string   "lastcity"
     t.string   "laststate"
-    t.string   "needs"
     t.string   "discovery"
     t.string   "transport"
+    t.string   "language"
+  end
+
+  create_table "entrants_needs", :force => true do |t|
+    t.integer "need_id"
+    t.integer "entrant_id"
+  end
+
+  create_table "needs", :force => true do |t|
+    t.string "item"
   end
 
   create_table "schools", :force => true do |t|
