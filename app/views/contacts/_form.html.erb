@@ -47,9 +47,11 @@
   </div>
  </div> 
  </div>
-  
+ 
+
+ 
    <%= f.fields_for :entrants do |task_form| %>
-   
+ <div class="entrant">  
     <div class="field">
     	<label class="control-label"><%= task_form.label :cnamef, "Child's First Name" %></label>
     	<div class="controls"><%= task_form.text_field :cnamef %></div>
@@ -66,28 +68,39 @@
     	<label class="control-label"><%= task_form.label :grade, "Grade" %></label>
     	<div class="controls"><%= task_form.text_field :grade %></div>
   	</div>
-  	<div class="field">
-    	<label class="control-label"><%= task_form.label :shelterid, "Shelter" %></label>
-    	<div class="controls"><%= task_form.number_field :shelterid %></div>
-  	</div>
-  	
 
-  
-			<%= f.fields_for :stays do |sub_form| %>
+ 
+  <div id="stay" class="well">  
+			<%= task_form.fields_for :stays do |sub_form| %>
+			  	<div class="fields">
+  					<label class="control-label"><%= sub_form.label :shelter_id, "Shelter" %></label>
+    				<div class="controls"><%= sub_form.number_field :shelter_id %></div>
+  				</div>
 			  	<div class="field">
     				<label class="control-label"><%= sub_form.label :entrydate, "Entry Date" %></label>
     				<div class="controls"><%= sub_form.date_select :entrydate %></div>
   				</div>
-			
+  				<div class="field">
+    				<label class="control-label"><%= sub_form.label :exitdate, "Exit Date" %></label>
+    				<div class="controls"><%= sub_form.date_select :exitdate %></div>
+  				</div>
+  				<div class="fields">
+  					<label class="control-label"><%= sub_form.label :totaldays, "Total Days" %></label>
+    				<div class="controls"><%= sub_form.number_field :totaldays %></div>
+  				</div>
 		  <% end %>
-
+ 			 <div class="controls"> 
+    		<%= task_form.link_to_add "Add A Shelter Stay", :stays, :class=> 'btn' %>
+			</div>
+			</div>
+			
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :mnres, "MN Res" %></label>
   		<div class="controls"><%= task_form.select :mnres, options_for_select(["Yes","No"]) %></div>
   	</div>
    	<div class="field">
 	  	<label class="control-label"><%= task_form.label :laststate, "Last State" %></label>
-    	<div class="controls"><%= task_form.text_field :laststate %></div<
+    	<div class="controls"><%= task_form.text_field :laststate %></div>
   	</div>
   	<div class="field">
     	<label class="control-label"><%= task_form.label :lastcity, "Last City" %></label>
@@ -99,6 +112,7 @@
 			<%= link_to 'New School', new_school_path, :target => '_blank' %>
 		</div>
 		</div>
+		
   	<div class="field">
     	<label class="control-label"><%= task_form.label :lastschool, "Last School" %></label>
   		<div class="controls"><%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
@@ -139,7 +153,7 @@
     <%= f.submit :class=> 'btn' %>
   </div>
   </div>
-  
+ </div>
 <% end %>
 </div>
 </div>

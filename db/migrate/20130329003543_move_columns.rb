@@ -1,12 +1,8 @@
 
 class MoveColumns < ActiveRecord::Migration
-  def change
+  def up
   	remove_column :entrants, :entrydate
   	remove_column :entrants, :exitdate
-  	remove_column :entrants,:totaldays
- 
-  	add_column :stays, :entrydate
-  	add_column :stays, :exitdate
-  	add_column :stays, :totaldays
+		remove_column :entrants, :totaldays
   end
 end
