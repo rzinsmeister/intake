@@ -90,10 +90,9 @@ class SchoolsController < ApplicationController
   end
   
   def search
-
     	@schools = School.search(params[:search])
     	@entrants = Entrant.search(params[:search])
-  	end
+  		@contacts = Contact.search(params[:search])
+  end
 	
-  
 end

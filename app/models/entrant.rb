@@ -23,8 +23,8 @@ end
 
   def self.search(search)
     if search
-      where('cnamef LIKE ?', "%#{search}%")
-    else
+			Entrant.joins(:contact).where('contacts.pnamef LIKE ? OR contacts.pnamel LIKE ? OR cnamef LIKE ? OR cnamel LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")    
+		else
       scoped
     end
   end

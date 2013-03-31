@@ -5,4 +5,13 @@ class Contact < ActiveRecord::Base
   
   accepts_nested_attributes_for :entrants
 
+  def self.search(search)
+    if search
+      where('pnamef LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+
 end
