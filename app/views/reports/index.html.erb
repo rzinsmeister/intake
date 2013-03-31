@@ -1,9 +1,12 @@
-<h1>Listing reports</h1>
+
+<div id="searchtitle" >
+<h1>Reports</h1>
+</div>
 
 
-<div id="report">
-   <h2>Run a Report by Age</h2>
-   <h3>Please enter grade</h3>
+<div id="report" class="well">
+   <h2>Entrants by Grade</h2>
+   <h3>Please enter a grade.</h3>
 <% if flash[:notice] %>
     <div id="notice"><%= flash[:notice] %></div>
 <% end %>
@@ -13,13 +16,25 @@
     <% end %>  
 </div>
 
-<div id="report">
-   <h2>Run a Report for a School</h2>
-   <h3>Please enter name of school</h3>
+<div id="report" class="well">
+   <h2>Entrants by School</h2>
+   <h3>Please enter the name of a school.</h3>
     <% if flash[:notice1] %>
         <div id="notice"><%= flash[:notice1] %></div>
     <% end %>
     <%= form_tag "reportsentrantbyschool", :method => 'get' do %>  
+        <%= text_field_tag :search, params[:search] %>  
+        <%= submit_tag "Run", :name => nil, :class=>'btn' %>  
+    <% end %>  
+</div>
+
+<div id="report" class="well">
+   <h2>Entrants by Shelter</h2>
+   <h3>Please enter the name of a shelter.</h3>
+    <% if flash[:notice2] %>
+        <div id="notice"><%= flash[:notice2] %></div>
+    <% end %>
+    <%= form_tag "reportsentrantbyshelter", :method => 'get' do %>  
         <%= text_field_tag :search, params[:search] %>  
         <%= submit_tag "Run", :name => nil, :class=>'btn' %>  
     <% end %>  

@@ -36,10 +36,25 @@ class ReportsController < ApplicationController
   		flash[:notice1] = "School not found, please check your entry"
   		redirect_to reports_url
   	end
+  end      
   end
 
-      
-	
-  end
+	def entrantbyshelter
+	  @entrantbyshelter = params[:search]
+
+		@shelters = Shelter.where('sheltername LIKE?', "%#{@entrantbyshelter}%")
+		
+		if @shelters.length == 1
+    	@results = Entrant.where('shelterid =?', @shelters[0].id)
+    else if @shelters.length > 1
+  		flash[:notice2] = "Too many shelters, please check the name"
+  		redirect_to reports_url
+  	else 
+  		flash[:notice2] = "Shelter not found, please check your entry"
+  		redirect_to reports_url
+  	end
+  end   
+	end
+
 
 end

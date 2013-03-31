@@ -23,8 +23,22 @@ background-color:white;
 div#searchtitle {
 font-family: $lucida;
 font-size:32px;
+color:rgb(17,40,45);
+font-weight: bold;
 }
 
+div#report h2 {
+font-size:24px;
+}
+
+div#report h3 {
+font-size:20px;
+margin-bottom:10px;
+}
+
+div#report {
+margin-bottom:24px;
+}
 
 div.button {
 padding-bottom:24px;
