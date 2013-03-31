@@ -1,17 +1,24 @@
+<div class="button">
+<%= link_to 'Edit', edit_contact_path(@contact), :class=> 'btn' %> 
+<%= link_to 'Back', entrants_path, :class=> 'btn' %>
+</div>
+
+<div id="show" class="well lead">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Pnamef:</b>
+  <b>Guardian's First Name:</b>
   <%= @contact.pnamef %>
 </p>
 
 <p>
-  <b>Pnamel:</b>
+  <b>Guardian's Last Name:</b>
   <%= @contact.pnamel %>
 </p>
 
 <p>
-  <b>Street:</b>
+  <b>Address:</b>
   <%= @contact.street %>
 </p>
 
@@ -35,16 +42,5 @@
   <%= @contact.phone %>
 </p>
 
-<p>
-  <b>Entrydate:</b>
-  <%= @contact.entrydate %>
-</p>
 
-<p>
-  <b>Exitdate:</b>
-  <%= @contact.exitdate %>
-</p>
-
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+</div>

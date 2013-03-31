@@ -48,12 +48,10 @@
     <div class="controls"><%= f.text_field :phone %></div>
   </div>
  </div> 
- </div>
-
-<div class="line">
-
-</div>
  
+ </div>
+	<div class="line">
+</div>
 
  
    <%= f.fields_for :entrants do |task_form| %>
@@ -137,7 +135,7 @@
 		</div>
 		</div>
   	
-  	
+  	<div class="entrant">  
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :language, "Language" %></label>
   		<div class="controls"><%= task_form.select :language, options_for_select(["Spanish","Somali","Hmong","Other"]) %></div>
@@ -165,6 +163,7 @@
   <div class="controls"> 
     <%= f.link_to_add "Add Another Child", :entrants, :class=> 'btn' %>
 
+</div>
   
   <div class="actions">
     <%= f.submit :class=> 'btn' %>

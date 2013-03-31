@@ -65,7 +65,7 @@
     <td><%= entrant.transport %></td>
 
     <td class="note"><%= entrant.note %></td>
-    <td><%= link_to 'Edit', edit_entrant_path(entrant), :class=> 'btn' %></td>
+    <td><%= link_to 'Edit', edit_contact_path(entrant), :class=> 'btn' %></td>
     <td><%= link_to 'Destroy', entrant, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
   </tr>
 <% end %>

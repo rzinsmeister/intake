@@ -9,8 +9,6 @@ s.city = "Minneapolis"
 s.state = "MN"
 s.zip = "55415"
 s.phone ="612.332.4500"
-s.entrydate = "01-30-2013"
-s.exitdate = ""
 end
 
 Contact.seed_once(:id) do |s|
@@ -22,6 +20,15 @@ s.city = "Minneapolis"
 s.state = "MN"
 s.zip = "55415"
 s.phone ="612.555.5555"
-s.entrydate = "01-01-2013"
-s.exitdate = "01-30-2013"
+end
+
+Contact.seed_once(:id) do |s|
+s.id = 3
+s.pnamef = "Sarah"
+s.pnamel = "Simmons"
+s.street = "323 Elm Street"
+s.city = "Minneapolis"
+s.state = "MN"
+s.zip = "55415"
+s.phone ="612.235.5345"
 end

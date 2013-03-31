@@ -11,6 +11,7 @@ class SheltersController < ApplicationController
   # GET /shelters.json
   def index
     @shelters = Shelter.all
+    @shelters = Shelter.paginate(:page => params[:page], :per_page =>10)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,24 +1,43 @@
+<div class="button">
+<%= link_to 'Edit', edit_contact_path(@entrant), :class=> 'btn' %>
+<%= link_to 'Back', entrants_path, :class=> 'btn' %>
+</div>
+
 <div id="show" class="well lead">
 
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Cnamef:</b>
+  <b>Child's First Name:</b>
   <%= @entrant.cnamef %>
 </p>
 
 <p>
-  <b>Cnamel:</b>
+  <b>Child's Last Name:</b>
   <%= @entrant.cnamel %>
 </p>
 
 <p>
-  <b>Contactid:</b>
-  <%= @entrant.contact_id %>
+  <div id="<%= @entrant.id %>" class="pop">
+  <b>Guardian:</b>
+      <% if(@entrant.contact.nil?) then %>
+    		NA
+  <% else %>
+        <%= link_to @entrant.contact.pnamef + " " + @entrant.contact.pnamel, contact_path(@entrant.contact.id) %>
+    </div>
+    <div id="hide-<%= @entrant.id %>" class="hide">
+        <%= @entrant.contact.street %>
+        <%= @entrant.contact.city %>
+        <%= @entrant.contact.state %>
+        <%= @entrant.contact.zip %>
+        </br>
+        <%= @entrant.contact.phone %>
+        </div>
+  <% end %>
 </p>
 
 <p>
-  <b>Dob:</b>
+  <b>Date of Birth:</b>
   <%= @entrant.dob %>
 </p>
 
@@ -47,21 +66,30 @@
 </p>
 
 <p>
-  <b>Laststate:</b>
+  <b>Last State:</b>
   <%= @entrant.laststate %>
 </p>
 
 <p>
-  <b>Lastcity:</b>
+  <b>Last City:</b>
   <%= @entrant.lastcity %>
 </p>
 
 <p>
-  <b>Lastschool:</b>
+  <b>Last School:</b>
   <% if(@entrant.lastschool.nil?) then %>
 			NA
   <% else %>  
     <%= @entrant.lastschool.schoolname %>
+  <% end %>
+</p>
+
+<p>
+  <b>Current School:</b>
+  <% if(@entrant.mpsschool.nil?) then %>
+			NA
+  <% else %>  
+    <%= @entrant.mpsschool.schoolname %>
   <% end %>
 </p>
 
@@ -103,12 +131,5 @@
   <%= @entrant.note %>
 </p>
 
-<div class="btn-group">
-<div class="btn">
-<%= link_to 'Edit', edit_entrant_path(@entrant) %>
-</div>
-<div class="btn">
-<%= link_to 'Back', entrants_path %>
-</div>
-</div>
+
 </div>

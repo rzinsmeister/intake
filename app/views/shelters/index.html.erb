@@ -1,10 +1,15 @@
 <h1>Minneapolis Shelters</h1>
-<div class="btn">
-<%= link_to 'New Shelter', new_shelter_path %>
+
+<div id="indexbtn" class="btn">
+	<%= link_to 'New Shelter', new_shelter_path %>
 </div>
+
 <br />
-<table class="table table-condensed table-hover">
-	<thead>
+
+<div class="span11 entrants-wrapper">
+
+<table id="mytable" class="table table-condensed table-hover table-fixed-header">
+<thead class="header">
   <tr>
     <th>Shelter</th>
     <th>Address</th>
@@ -14,26 +19,30 @@
     <th>Phone</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 </thead>
 <% @shelters.each do |shelter| %>
   <tbody>
   <tr>
-    <td><%= shelter.sheltername %></td>
+    <td><%= link_to shelter.sheltername, shelter %></td>
     <td><%= shelter.street %></td>
     <td><%= shelter.city %></td>
     <td><%= shelter.state %></td>
     <td><%= shelter.zip %></td>
     <td><%= shelter.phone %></td>
-    <td><%= link_to 'Show', shelter %></td>
-    <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
-    <td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_shelter_path(shelter), :class=> 'btn' %></td>
+    <td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
   </tr>
   </tbody>
 <% end %>
 </table>
+</div>
 
 <br />
+
+<div class="pagination pagination-centered">
+<%= will_paginate @entrants %>
+</div>
+
 
 
