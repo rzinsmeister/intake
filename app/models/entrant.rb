@@ -23,7 +23,7 @@ end
 
   def self.search(search)
     if search
-			Entrant.joins(:contact).where('contacts.pnamef LIKE ? OR contacts.pnamel LIKE ? OR cnamef LIKE ? OR cnamel LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")    
+			Entrant.joins(:contact).where('contacts.pnamef LIKE ? OR contacts.pnamel LIKE ? OR studentid = ? OR cnamef LIKE ? OR cnamel LIKE ?', "%#{search}%", "%#{search}%", "#{search}", "%#{search}%", "%#{search}%")    
 		else
       scoped
     end

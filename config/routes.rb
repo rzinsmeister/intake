@@ -1,6 +1,9 @@
 Intake::Application.routes.draw do
 
 
+  resources :reports
+
+
   #resources :sessions,  only: [:new, :create, :destroy]
   get '/login' => "sessions#new", as: "new_session"
   post '/login' => "sessions#create", as: "session"
