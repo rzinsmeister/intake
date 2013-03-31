@@ -126,9 +126,11 @@
 
   	<div class="field"> 
   		<label class="control-label"><%= need_form.label :item, "Spec Needs" %></label>
-  		<div class="controls"><%= need_form.select :need_id, options_from_collection_for_select(@needs, 'id', 'item') %></div>
+  		<div class="controls"><%= need_form.select :need_id, options_from_collection_for_select(@needs, 'id', 'item') %>
+  		<%= task_form.link_to_remove "Remove this Need", :class => 'btn' %></div>
   	    <%= need_form.hidden_field :entrant_id %>
   	</div>
+
   	<% end %>
   	<div class="controls"> 
     	<%= task_form.link_to_add "Add A Special Need", :entrants_needs, :class=> 'btn' %>
