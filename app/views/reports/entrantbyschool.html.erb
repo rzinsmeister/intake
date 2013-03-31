@@ -1,0 +1,33 @@
+<div id="page">
+<div id="results">
+<h2>Results</h2>
+<table class="table">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Date of Birth</th>
+    <th>Grade</th>
+    <th>School</th>
+  </tr>
+
+
+<% @results.each do |result| %>
+  <tr>
+    <td><%= result.cnamef %></td>
+    <td><%= result.cnamel %></td>
+    <td><%= result.dob %></td>
+    <td><%= result.grade %></td>
+    <td><% if(result.mpsschool.nil?) then %>
+    The student has no school to speak of.
+  <% else %>
+    <%= result.mpsschool.schoolname %>
+  <% end %></td>
+<% end %>
+</table>
+
+<div class="btn">
+<%= link_to 'Back', reports_url %>
+</div>
+</div>
+</div>
+</body>

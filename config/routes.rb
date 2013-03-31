@@ -32,6 +32,10 @@ Intake::Application.routes.draw do
 
 
   match 'studentssearch' => 'students#search'
+  
+  match 'reportsentrantbyschool' => 'reports#entrantbyschool'
+
+  match 'reportsentrantbyage' => 'reports#entrantbyage'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

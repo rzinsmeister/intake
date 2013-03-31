@@ -1,3 +1,26 @@
 <h1>Listing reports</h1>
 
 
+<div id="report">
+   <h2>Run a Report by Age</h2>
+   <h3>Please enter grade</h3>
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+    <%= form_tag "reportsentrantbyage", :method => 'get' do %>  
+        <%= text_field_tag :search, params[:search] %>  
+        <%= submit_tag "Run", :name => nil, :class=>'btn' %>  
+    <% end %>  
+</div>
+
+<div id="report">
+   <h2>Run a Report for a School</h2>
+   <h3>Please enter name of school</h3>
+    <% if flash[:notice1] %>
+        <div id="notice"><%= flash[:notice1] %></div>
+    <% end %>
+    <%= form_tag "reportsentrantbyschool", :method => 'get' do %>  
+        <%= text_field_tag :search, params[:search] %>  
+        <%= submit_tag "Run", :name => nil, :class=>'btn' %>  
+    <% end %>  
+</div>
