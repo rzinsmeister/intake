@@ -8,6 +8,9 @@ class ReportsController < ApplicationController
 
 
   def entrantbyage
+    @entrants = Entrant.paginate(:page => params[:page], :per_page =>10)
+
+  
     @entrantbyage = params[:search]
 
     @entrant = Entrant.where('grade = ?', "#{@entrantbyage}")

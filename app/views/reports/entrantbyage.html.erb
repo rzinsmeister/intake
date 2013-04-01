@@ -1,11 +1,17 @@
 <div id="page">
+
+
 <div id="results">
 
-<div id="searchtitle" class="well">
+<div id="searchtitle">
 	<h2>Results</h2>
 </div>
+<div class="btn">
+<%= link_to 'Back', reports_url %>
+</div>
+<div class="span11 entrants-wrapper">
 
-<table class="table">
+<table class="table table-condensed table-hover">
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
@@ -16,8 +22,8 @@
 
 <% @results.each do |result| %>
   <tr>
-    <td><%= result.cnamef %></td>
-    <td><%= result.cnamel %></td>
+    <td><%= link_to result.cnamef, result %></td>
+    <td><%= link_to result.cnamel, result %></td>
     <td><%= result.dob %></td>
     <td><%= result.grade %></td>
     <td><% if(result.mpsschool.nil?) then %>
@@ -27,9 +33,14 @@
   <% end %></td>
 <% end %>
 </table>
-<div class="btn">
-<%= link_to 'Back', reports_url %>
+
 </div>
+
 </div>
+
+</div>
+
+<div class="pagination pagination-centered">
+<%= will_paginate @entrants %>
 </div>
 </body>

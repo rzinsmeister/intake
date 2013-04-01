@@ -1,7 +1,15 @@
 <div id="page">
 <div id="results">
+<div id="searchtitle">
+
 <h2>Results</h2>
-<table class="table">
+</div>
+<div class="btn">
+<%= link_to 'Back', reports_url %>
+</div>
+<div class="span11 entrants-wrapper">
+
+<table class="table table-condensed table-hover">
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
@@ -24,10 +32,8 @@
   <% end %></td>
 <% end %>
 </table>
-
-<div class="btn">
-<%= link_to 'Back', reports_url %>
 </div>
+
 </div>
 </div>
 </body>
