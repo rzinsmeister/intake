@@ -5,24 +5,26 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# group :production do
-#  gem 'pg'
-# end
+group :development, :test do
+  gem 'sqlite3'
+end
 
-# group :development, :test do
-#  gem 'sqlite3'
-# end
 
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+end
+
 
 gem 'seed-fu', '~> 2.2.0'
 gem 'twitter-bootstrap-rails', '~> 2.2.0'
 gem 'therubyracer', '~> 0.10.2'
+
 gem 'less-rails'
 gem "simple_form", "~> 2.0.0.rc"
 
 # Gems used only for assets and not required
 # in production environments by default.
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
