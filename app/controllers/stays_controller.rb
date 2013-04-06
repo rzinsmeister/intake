@@ -8,23 +8,19 @@ class StaysController < ApplicationController
   end
 
 
-  	def index
+  def index
 
-    end
   end
-
-
+  
   def show
 
   end
-
 
   def new
     @stay = Stay.new
 		@contact = Contact.new
 		@entrant = Entrant.new
-
-    end
+  end
   
 
   def edit
