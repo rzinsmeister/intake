@@ -22,8 +22,13 @@ def days_between(entrydate, exitdate)
 end
 
   def self.search(search)
+    
     if search
-			Entrant.joins(:contact).where('contacts.pnamef LIKE ? OR contacts.pnamel LIKE ? OR studentid = ? OR cnamef LIKE ? OR cnamel LIKE ?', "%#{search}%", "%#{search}%", "#{search}", "%#{search}%", "%#{search}%")    
+    	if search.to_i == 0
+				Entrant.joins(:contact).where('contacts.pnamef LIKE ? OR contacts.pnamel LIKE ? OR cnamef LIKE ? OR cnamel LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")    
+			elsif search.to_i != 0 
+				Entrant.where('studentid = ?', search.to_i)
+			end
 		else
       scoped
     end
