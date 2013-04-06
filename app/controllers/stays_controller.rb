@@ -25,7 +25,7 @@ class StaysController < ApplicationController
 		@entrant = Entrant.new
 
     end
-  end
+  
 
   def edit
 
