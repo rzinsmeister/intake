@@ -42,5 +42,82 @@
   <%= @contact.phone %>
 </p>
 
+<% @contact.entrants.each do |entrant| %>
+<div class="well">
+
+<p>
+  <b>Child's First Name:</b>
+  <%= entrant.cnamef %>
+</p>
+
+<p>
+  <b>Child's Last Name:</b>
+  <%= entrant.cnamel %>
+</p>
+
+<p>
+  <b>Date of Birth:</b>
+  <%= entrant.dob %>
+</p>
+
+<p>
+  <b>Grade:</b>
+  <%= entrant.grade %>
+</p>
+
+<p>
+  <b>Student ID:</b>
+  <%= entrant.studentid %>
+</p>
+
+<p>
+  <b>Shelter:</b>
+  	<% if(entrant.shelterid.nil?) then %>
+    		NA
+  <% else %>   
+  	<%= link_to Shelter.find(entrant.shelterid).sheltername, shelter_path(entrant.shelterid) %>
+  <% end %>
+</p>
+
+<p>
+  <b>MN Res:</b>
+  <%= entrant.mnres %>
+</p>
+
+<p>
+  <b>Last State:</b>
+  <%= entrant.laststate %>
+</p>
+
+<p>
+  <b>Last City:</b>
+  <%= entrant.lastcity %>
+</p>
+
+<p>
+  <b>Last School:</b>
+  <% if(entrant.lastschool.nil?) then %>
+			NA
+  <% else %>  
+    <%= entrant.lastschool.schoolname %>
+  <% end %>
+</p>
+
+<p>
+  <b>Current School:</b>
+  <% if(entrant.mpsschool.nil?) then %>
+			NA
+  <% else %>  
+    <%= entrant.mpsschool.schoolname %>
+  <% end %>
+</p>
+    	
+<p>
+	<b>Language:</b>
+	<%= entrant.language %>
+</p>
+
+</div>
+<% end %>
 
 </div>

@@ -1,5 +1,5 @@
 class Entrant < ActiveRecord::Base
-  attr_accessible :cnamef, :cnamel, :contact_id, :dob, :grade, :lastschool, :mnres, :mpsschool, :nonmpsschool, :note, :shelterid, :shelterschool, :studentid, :bus, :lastcity, :laststate, :discovery, :transport, :language, :stays_attributes, :entrants_needs_attributes, :needs_attributes, :needs
+  attr_accessible :cnamef, :cnamel, :contact_id, :dob, :grade, :lastschool, :mnres, :mpsschool, :nonmpsschool, :note, :shelterid, :shelterschool, :studentid, :bus, :lastcity, :laststate, :discovery, :transport, :language, :stays_attributes, :entrants_needs_attributes, :needs_attributes, :needs, :contact_attributes
 
   has_many :stays
   has_many :needs, :through => :entrants_needs
