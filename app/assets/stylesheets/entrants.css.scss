@@ -19,8 +19,16 @@ margin-bottom:24px;
 margin-left:15%;
 margin-right:3%;
 }
+div.test {
+text-align:center;
+}
+div#special {
+margin-bottom:24px;
+}
 
-
+div#newschool {
+margin-bottom:12px;
+}
 
 div#stay {
 background-color: rgb(235,235,235);
@@ -54,12 +62,18 @@ border:solid 1px rgb(17,40,45);
 @media screen and (min-width: 300px) {
 margin-left:5%;
 
-div#staybuttons {
-margin-left:0%;
-}
+
 }
 
 @media screen and (min-width: 480px) {
+div#staybuttons {
+float:right;
+}
+
+div#needs {
+float:right;
+}
+
 
 div.guardian .two-col {
        -moz-column-count: 1;
@@ -82,8 +96,10 @@ div.entrant {
        
        }
 
-@media screen and (min-width: 960px) {
-
+@media screen and (min-width: 1200px) {
+div#staybuttons {
+sfloat:none;
+}
 div.guardian .two-col {
        -moz-column-count: 2;
        -moz-column-gap: 0px;
