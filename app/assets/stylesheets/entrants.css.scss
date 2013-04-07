@@ -26,6 +26,7 @@ div#stay {
 background-color: rgb(235,235,235);
 }
 
+
 td.dob {
 min-width:100px;
 }
@@ -52,6 +53,10 @@ border:solid 1px rgb(17,40,45);
 
 @media screen and (min-width: 300px) {
 margin-left:5%;
+
+div#staybuttons {
+margin-left:0%;
+}
 }
 
 @media screen and (min-width: 480px) {
