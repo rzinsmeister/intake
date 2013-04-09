@@ -25,7 +25,7 @@ end
     
     if search
     	if search.to_i == 0
-				Entrant.joins(:contact).where('contacts.pnamef ILIKE ? OR contacts.pnamel LIKE ? OR cnamef LIKE ? OR cnamel LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")    
+				Entrant.joins(:contact).where('contacts.pnamef ILIKE ? OR contacts.pnamel ILIKE ? OR cnamef ILIKE ? OR cnamel ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")    
 			elsif search.to_i != 0 
 				Entrant.where('studentid = ?', search.to_i)
 			end

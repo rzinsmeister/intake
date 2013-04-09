@@ -5,7 +5,7 @@ class School < ActiveRecord::Base
   
   def self.search(search)
     if search
-      where('schoolname LIKE ?', "%#{search}%")
+      where('schoolname ILIKE ?', "%#{search}%")
 
     else
       scoped
