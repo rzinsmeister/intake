@@ -26,7 +26,7 @@ class ReportsController < ApplicationController
   def entrantbyschool 
     @entrantbyschool = params[:search]
     
-    @schools = School.where('schoolname LIKE ?',"%#{@entrantbyschool}%")
+    @schools = School.where('lower(schoolname) LIKE ?',"%#{@entrantbyschool.downcase}%")
     
     if @schools.length == 1 
     	@results = Entrant.where('mpsschool =?', @schools[0].id)
@@ -45,7 +45,7 @@ class ReportsController < ApplicationController
 	def entrantbyshelter
 	  @entrantbyshelter = params[:search]
 
-		@shelters = Shelter.where('sheltername LIKE?', "%#{@entrantbyshelter}%")
+		@shelters = Shelter.where('lower(sheltername) LIKE?', "%#{@entrantbyshelter.downcase}%")
 		
 		if @shelters.length == 1
     	@results = Entrant.where('shelterid =?', @shelters[0].id)
