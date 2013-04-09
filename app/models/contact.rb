@@ -7,7 +7,7 @@ class Contact < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('pnamef ILIKE ?', "%#{search}%")
+      where("lower(pnamef) like ?", "%#{search.downcase}%")
     else
       scoped
     end
