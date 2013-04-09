@@ -27,7 +27,7 @@ end
     	if search.to_i == 0
 				Entrant.joins(:contact).where('lower(contacts.pnamef) like ? OR lower(contacts.pnamel) like ? OR lower(cnamef) like ? OR lower(cnamel) like ?', "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%")    
 			elsif search.to_i != 0 
-				Entrant.where('studentid like ?', "%#{search.to_i}%")
+				Entrant.where('studentid = ?', search.to_i)
 			end
 		else
       scoped
