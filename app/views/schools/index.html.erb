@@ -31,7 +31,7 @@
     <td><%= school.sswname %></td>
     <td><%= school.sswphone %></td>
     <td><%= link_to 'Edit', edit_school_path(school), :class=> 'btn'  %></td>
-    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
+    <td><%= link_to 'Remove', school, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
   </tr>
 <% end %>
 </table>

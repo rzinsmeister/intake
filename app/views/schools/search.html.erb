@@ -23,20 +23,22 @@
     	<th>Shelter</th>
     	<th>Last School</th>
   		<th>Current School</th>
-    	<th>Bus</th>
-    	<th>Discovery</th>
-    	<th>Transport</th>
-    	<th>Note</th>
 
-
-    	<th></th>
-    	<th></th>
   	</tr>
 
 	<% @entrants.each do |entrant| %>
   	<tr>
     	<td><%= link_to entrant.cnamef, entrant  %></td>
-    	<td><%= link_to entrant.cnamel, entrant  %></td>
+    	<td><div id="child-<%= entrant.id %>" class="pop">
+    			<%= link_to entrant.cnamel, entrant  %>
+    			</div>
+    			<div id="hide-child-<%= entrant.id %>" class="hide">
+        		<%= "Bus: " + entrant.bus %>
+    				<%= "Discovery: " + entrant.discovery %>
+    				<%= "Transport: " + entrant.transport %>
+    				<%= "Note: " + entrant.note %>
+        	</div>
+    	</td>
     	<td><% if(entrant.contact_id.nil?) then %>
     				NA
     			<% else %>
@@ -63,23 +65,16 @@
     	<td><% if(entrant.lastschool.nil?) then %>
 					NA
   			<% else %>  
-    			<%= entrant.lastschool.schoolname %>
+    			<%= link_to School.find(entrant.lastschool).schoolname, school_path(entrant.lastschool) %>
   			<% end %>
     	</td>
     	<td>
     	  <% if(entrant.mpsschool.nil?) then %>
 					NA
   			<% else %>  
-    			<%= entrant.mpsschool.schoolname %>
+    			<%= link_to School.find(entrant.mpsschool).schoolname, school_path(entrant.mpsschool) %>
   			<% end %>
     	</td>
-    	<td><%= entrant.bus %></td>
-    	<td><%= entrant.discovery %></td>
-    	<td><%= entrant.transport %></td>
-    	<td><%= entrant.note %></td>
- 
-  	  <td><%= link_to 'Edit', edit_entrant_path(entrant) %></td>
-    	<td><%= link_to 'Destroy', entrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   	</tr>
 	<% end %>
 		</table>
@@ -102,32 +97,28 @@
 	<table class="table table-condensed table-hover">
   	<tr>
     	<th>School Name</th>
-    	<th>Address</th>
-    	<th>City</th>
-    	<th>State</th>
-    	<th>Zip</th>
     	<th>Phone</th>
     	<th>Social Worker</th>
     	<th>Social Worker Phone</th>
-    	<th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 	
 	<% @schools.each do |school| %>
   	<tr>
-    	<td><%= school.schoolname %></td>
-    	<td><%= school.street %></td>
-    	<td><%= school.city %></td>
-    	<td><%= school.state %></td>
-    	<td><%= school.zip %></td>
+    	<td>
+    		<div id="school-<%= school.id %>" class="pop">
+        	<%= link_to school.schoolname, school %>
+        </div>
+        <div id="hide-school-<%= school.id %>" class="hide">
+        <%= school.street %>
+        <%= school.city %>
+        <%= school.state %>
+        <%= school.zip %>
+        </div>
+      </td>
     	<td><%= school.officephone %></td>
     	<td><%= school.sswname %></td>
     	<td><%= school.sswphone %></td>
-  
-	    <td><%= link_to 'Show', school %></td>
-  	  <td><%= link_to 'Edit', edit_school_path(school) %></td>
-    	<td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   	</tr>
 	<% end %>
 		</table>
@@ -145,28 +136,23 @@
 	<table class="table table-condensed table-hover">
   	<tr>
     	<th>Shelter Name</th>
-    	<th>Address</th>
-    	<th>City</th>
-    	<th>State</th>
-    	<th>Zip</th>
     	<th>Phone</th>
-    	<th></th>
-    	<th></th>
-    	<th></th>
   </tr>
 	
 	<% @shelters.each do |shelter| %>
   	<tr>
-    	<td><%= shelter.sheltername %></td>
-    	<td><%= shelter.street %></td>
-    	<td><%= shelter.city %></td>
-    	<td><%= shelter.state %></td>
-    	<td><%= shelter.zip %></td>
+    	<td>
+    	<div id="shelter-<%= shelter.id %>" class="pop">
+    		<%= link_to shelter.sheltername, shelter %></td>
+    	</div>
+    	<div id="hide-shelter-<%= shelter.id %>" class="hide">
+    		<%= shelter.street %>
+    		<%= shelter.city %>
+    		<%= shelter.state %>
+    		<%= shelter.zip %>
+    	</div>
     	<td><%= shelter.phone %></td>
   
-	    <td><%= link_to 'Show', shelter %></td>
-  	  <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
-    	<td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   	</tr>
 	<% end %>
 		</table>

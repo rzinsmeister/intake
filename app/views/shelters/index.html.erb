@@ -31,7 +31,7 @@
     <td><%= shelter.zip %></td>
     <td><%= shelter.phone %></td>
     <td><%= link_to 'Edit', edit_shelter_path(shelter), :class=> 'btn' %></td>
-    <td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
+    <td><%= link_to 'Remove', shelter, method: :delete, data: { confirm: 'Are you sure?' }, :class=> 'btn btn-warning'  %></td>
   </tr>
   </tbody>
 <% end %>
