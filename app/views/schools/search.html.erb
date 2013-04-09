@@ -134,6 +134,50 @@
 	<% end %>
 	</div>
 	</div>
+
+
+	<div class = "sheltersearch">
+		<% if @shelters.empty? %>
+		  <h3 class="alert">No shelters found matching your search.</h3>  
+
+		<% else%>
+	<div class="entrants-wrapper">
+	<table class="table table-condensed table-hover">
+  	<tr>
+    	<th>Shelter Name</th>
+    	<th>Address</th>
+    	<th>City</th>
+    	<th>State</th>
+    	<th>Zip</th>
+    	<th>Phone</th>
+    	<th></th>
+    	<th></th>
+    	<th></th>
+  </tr>
+	
+	<% @shelters.each do |shelter| %>
+  	<tr>
+    	<td><%= shelter.sheltername %></td>
+    	<td><%= shelter.street %></td>
+    	<td><%= shelter.city %></td>
+    	<td><%= shelter.state %></td>
+    	<td><%= shelter.zip %></td>
+    	<td><%= shelter.phone %></td>
+  
+	    <td><%= link_to 'Show', shelter %></td>
+  	  <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
+    	<td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  	</tr>
+	<% end %>
+		</table>
+	<% end %>
+	</div>
+	</div>
+	
+
+
+
+	
 </div>
 	
 

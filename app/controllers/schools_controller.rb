@@ -93,6 +93,7 @@ class SchoolsController < ApplicationController
     	@schools = School.search(params[:search])
     	@entrants = Entrant.search(params[:search])
   		@contacts = Contact.search(params[:search])
+  		@shelters = Shelter.search(params[:search])
   end
 	
 end
