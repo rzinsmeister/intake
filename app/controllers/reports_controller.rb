@@ -13,7 +13,7 @@ class ReportsController < ApplicationController
   
     @entrantbyage = params[:search]
 
-    @entrant = Entrant.where('grade = ?', "#{@entrantbyage}")
+    @entrant = Entrant.where('lower(grade) = ?', "#{@entrantbyage.downcase}")
       if @entrant.length > 0
         @results = @entrant
       else 
