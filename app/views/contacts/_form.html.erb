@@ -126,11 +126,11 @@
 	  	
 	  	<div class="field">
   	  	<label class="control-label"><%= task_form.label :lastschool, "Last School" %></label>
-  			<div class="controls"><%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
+  			<div class="controls"><%= task_form.select :lastschool_id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
   		</div>
   		<div class="field">
   	  	<label class="control-label"><%= task_form.label :mpsschool, "Current School" %></label>
-  			<div class="controls"><%= task_form.select :id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
+  			<div class="controls"><%= task_form.select :mpsschool_id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
   		</div>
   		
   		<div id="special">	

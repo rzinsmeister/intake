@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130331021416) do
+ActiveRecord::Schema.define(:version => 20130418201705) do
 
   create_table "contacts", :force => true do |t|
     t.string   "pnamef"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(:version => 20130331021416) do
     t.string   "grade"
     t.integer  "shelterid"
     t.string   "mnres"
-    t.integer  "lastschool"
+    t.integer  "lastschool_id"
     t.integer  "shelterschool"
-    t.integer  "mpsschool"
+    t.integer  "mpsschool_id"
     t.integer  "nonmpsschool"
     t.text     "note"
     t.datetime "created_at",    :null => false
@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(:version => 20130331021416) do
 
   create_table "needs", :force => true do |t|
     t.string "item"
+  end
+
+  create_table "reports", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "schools", :force => true do |t|
