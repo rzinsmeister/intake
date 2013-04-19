@@ -33,10 +33,10 @@
     			<%= link_to entrant.cnamel, entrant  %>
     			</div>
     			<div id="hide-child-<%= entrant.id %>" class="hide">
-        		<%= "Bus: " + entrant.bus %>
-    				<%= "Discovery: " + entrant.discovery %>
-    				<%= "Transport: " + entrant.transport %>
-    				<%= "Note: " + entrant.note %>
+        		Bus: <%= entrant.bus %>
+    				Discovery: <%= entrant.discovery %>
+    				Transport: <%= entrant.transport %>
+    				Note: <%= entrant.note %>
         	</div>
     	</td>
     	<td><% if(entrant.contact_id.nil?) then %>
