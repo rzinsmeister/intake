@@ -29,7 +29,7 @@ class ReportsController < ApplicationController
     @schools = School.where('lower(schoolname) LIKE ?',"%#{@entrantbyschool.downcase}%")
     
     if @schools.length == 1 
-    	@results = Entrant.where('mpsschool =?', @schools[0].id)
+    	@results = Entrant.where('mpsschool_id =?', @schools[0].id)
     
     else if @schools.length > 1
   		flash[:notice1] = "Too many schools, please check the name"
