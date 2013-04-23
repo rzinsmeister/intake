@@ -6,8 +6,8 @@
 	</div>
 
 	<div class="span11">
+	
 	<div class="entrantsearch">
-		
 		<% if @entrants.empty? %>
   <h3 class="alert">No names found matching your search.</h3>  
 	<% else%>
@@ -23,9 +23,7 @@
     	<th>Shelter</th>
     	<th>Last School</th>
   		<th>Current School</th>
-
   	</tr>
-
 	<% @entrants.each do |entrant| %>
   	<tr>
     	<td><%= link_to entrant.cnamef, entrant  %></td>
@@ -78,10 +76,9 @@
   	</tr>
 	<% end %>
 		</table>
-	<% end %>
-	</div>
-
-	
+		</div>	<!-- Entrants search -->
+		<% end %>
+</div>	<!-- Entrants search -->
 
 
 
@@ -102,7 +99,6 @@
     	<th>Social Worker Phone</th>
 
   </tr>
-	
 	<% @schools.each do |school| %>
   	<tr>
     	<td>
@@ -122,9 +118,9 @@
   	</tr>
 	<% end %>
 		</table>
+		</div> <!-- entrants wrapper -->
 	<% end %>
-	</div>
-	</div>
+</div><!-- School search -->
 
 
 	<div class = "sheltersearch">
@@ -138,38 +134,31 @@
     	<th>Shelter Name</th>
     	<th>Phone</th>
   </tr>
-	
 	<% @shelters.each do |shelter| %>
   	<tr>
     	<td>
     	<div id="shelter-<%= shelter.id %>" class="pop">
-    		<%= link_to shelter.sheltername, shelter %></td>
-    	</div>
+    		<%= link_to shelter.sheltername, shelter %>
+    	</div> 	
     	<div id="hide-shelter-<%= shelter.id %>" class="hide">
     		<%= shelter.street %>
     		<%= shelter.city %>
     		<%= shelter.state %>
     		<%= shelter.zip %>
     	</div>
+    	</td>
     	<td><%= shelter.phone %></td>
-  
   	</tr>
 	<% end %>
 		</table>
+		</div> <!-- entrants wrapper -->
 	<% end %>
-	</div>
-	</div>
-	
-
+	</div><!-- shelter search -->
 
 
 	
-</div>
+	</div> <!-- Span 11 -->
 	
-
-
-
-
 	
-	</div>
+	</div> <!-- Page -->
 </body>
