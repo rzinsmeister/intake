@@ -72,7 +72,7 @@
   		</div>
   		<div class="field">
     		<label class="control-label"><%= task_form.label :grade, "Grade" %></label>
-    		<div class="controls"><%= task_form.select :grade, options_for_select(["SCR","ECSC","Pre","K","1","2","3","4","5","6","7","8","9","10","11","12"]) %></div>
+    		<div class="controls"><%= task_form.select :grade, options_for_select(["SCR","ECSC","Pre","K","1","2","3","4","5","6","7","8","9","10","11","12"], :selected =>task_form.object.grade) %></div>
   		</div>
 	  	<div class="field">
   	  	<label class="control-label"><%= task_form.label :studentid, "Student ID Number" %></label>
@@ -84,7 +84,7 @@
 				<div id="staybuttons">
 			  <div class="fields">
   				<label class="control-label"><%= sub_form.label :shelter_id, "Shelter" %></label>
-    			<div class="controls"><%= sub_form.select :shelter_id, options_from_collection_for_select(@shelters, 'id', 'sheltername') %></div>
+    			<div class="controls"><%= sub_form.collection_select :shelter_id, @shelters, 'id', 'sheltername' %></div>
   			</div>
 			  <div class="field">
     			<label class="control-label"><%= sub_form.label :entrydate, "Entry Date" %></label>
@@ -126,11 +126,11 @@
 	  	
 	  	<div class="field">
   	  	<label class="control-label"><%= task_form.label :lastschool, "Last School" %></label>
-  			<div class="controls"><%= task_form.select :lastschool_id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
+  			<div class="controls"><%= task_form.collection_select :lastschool_id, @schools, 'id', 'schoolname', :include_blank => 'NA'  %></div>
   		</div>
   		<div class="field">
   	  	<label class="control-label"><%= task_form.label :mpsschool, "Current School" %></label>
-  			<div class="controls"><%= task_form.select :mpsschool_id, options_from_collection_for_select(@schools, 'id', 'schoolname'), :include_blank => 'NA'  %></div>
+  			<div class="controls"><%= task_form.collection_select :mpsschool_id, @schools, 'id', 'schoolname', :include_blank => 'NA'  %></div>
   		</div>
   		
   		<div id="special">	
@@ -138,7 +138,7 @@
   		<div id="needs"> 
   			<div class="field"> 
   				<label class="control-label"><%= need_form.label :item, "Spec Needs" %></label>
-  				<div class="controls"><%= need_form.select :need_id, options_from_collection_for_select(@needs, 'id', 'item') %>
+  				<div class="controls"><%= need_form.collection_select :need_id, @needs, 'id', 'item' %>
   				<%= need_form.link_to_remove "Remove this Need", :class => 'btn' %></div>
   	    	<%= need_form.hidden_field :entrant_id %>
   			</div>
@@ -156,19 +156,19 @@
 		<div class="entrant">  
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :language, "Language" %></label>
-  		<div class="controls"><%= task_form.select :language, options_for_select(["Spanish","Somali","Hmong","Other"]) %></div>
+  		<div class="controls"><%= task_form.select :language, options_for_select(["Spanish","Somali","Hmong","Other"], :selected =>task_form.object.language) %></div>
   	</div>
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :bus, "Bus Needed" %></label>
-  		<div class="controls"><%= task_form.select :bus, options_for_select(["Yes","No"]) %></div>
+  		<div class="controls"><%= task_form.select :bus, options_for_select(["Yes","No"], :selected =>task_form.object.bus) %></div>
   	</div>
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :discovery, "Entered in Discovery" %></label>
-  		<div class="controls"><%= task_form.select :discovery, options_for_select(["No","Yes"]) %></div>
+  		<div class="controls"><%= task_form.select :discovery, options_for_select(["No","Yes"], :selected =>task_form.object.grade) %></div>
   	</div>
   	<div class="field"> 
   		<label class="control-label"><%= task_form.label :transport, "Transport Set Up" %></label>
-  		<div class="controls"><%= task_form.select :transport, options_for_select(["No","Yes"]) %></div>
+  		<div class="controls"><%= task_form.select :transport, options_for_select(["No","Yes"], :selected =>task_form.object.grade) %></div>
   	</div>
   	<div class="field">
     	<label class="control-label"><%= task_form.label :note, "Notes" %></label>
