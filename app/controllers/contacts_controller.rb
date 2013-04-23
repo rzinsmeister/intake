@@ -49,7 +49,6 @@ class ContactsController < ApplicationController
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
-    @contact.entrants.build
     @shelters = Shelter.all
 		@schools = School.all
 		@stays = Stay.all
